@@ -1,0 +1,81 @@
+/*--------------------Farver----------*/
+$colors: (
+  "primary": $primary,
+  "sucess": $sucess,
+  "fail": $fail,
+);
+
+@each $key, $val in $colors {
+  .text-#{$key} {
+    color: $val;
+  }
+  .bg-#{$key} {
+    background-color: $val;
+  }
+}
+
+/*------------------------Fonte--------------*/
+$font-family: "oswald";
+
+@mixin text-styles($font, $font-size, $font-weight, $align, $color) {
+  font-family: $font;
+  font-size: $font-size;
+  font-weight: $font-weight;
+  text-align: $align;
+  color: $color;
+}
+
+.title {
+  @include text-styles($font-family, 2rem, bold, center, $primary);
+}
+
+.header {
+  @include text-styles($font-family, 1.5rem, normal, center, $primary);
+}
+
+.paragraph {
+  @include text-styles($font-family, 1rem, 300, center, black);
+}
+
+// /*-------------Knapper---------*/
+// $border-radius: 10px;
+
+// @mixin buttons(
+//   $display,
+//   $width,
+//   $height,
+//   $padding,
+//   $background,
+//   $text-decoration,
+//   $border-radius
+// ) {
+//   display: $display;
+//   width: $width;
+//   height: $height;
+//   padding: $padding;
+//   background-color: $background;
+//   border-radius: $border-radius;
+// }
+
+// .btn-primary {
+//   @include text-styles($font-family, 1.5rem, 400, white);
+//   @include buttons(block, 230px, 40px, 1rem, $primary, $border-radius);
+//   text-align: center;
+// }
+
+// .btn-primary-light {
+//   @include text-styles($font-family, 1.5rem, 400, white);
+//   @include buttons(
+//     block,
+//     230px,
+//     40px,
+//     1rem,
+//     rgba(28, 73, 75, 0.5),
+//     $border-radius
+//   );
+//   text-align: center;
+// }
+
+.list-no-style {
+  list-style-type: none;
+}

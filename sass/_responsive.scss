@@ -1,0 +1,49 @@
+/*---------------Flex---------*/
+@mixin responsive-flex($display, $direction, $align-items, $justify-content) {
+  display: $display;
+  flex-direction: $direction;
+  align-items: $align-items;
+  justify-content: $justify-content;
+}
+
+.flex-col-center {
+  @include responsive-flex(flex, column, center, center);
+}
+.flex-row-center {
+  @include responsive-flex(flex, row, center, center);
+}
+.flex-inline-col-center {
+  @include responsive-flex(inline-flex, column, center, center);
+}
+.flex-inline-row-center {
+  @include responsive-flex(inline-flex, row, center, center);
+}
+
+/*---------------Grid----------*/
+@mixin responsive-grid($display, $columns, $gap) {
+  display: $display;
+  grid-template-columns: repeat($columns, 1fr);
+  gap: $gap;
+}
+
+// //giver classes .col-span-xx. denne class justeres ikke efter skærmstørrelse
+@for $i from 1 to 13 {
+  .col-span-#{$i} {
+    grid-column: span $i;
+  }
+}
+
+/*--------------------mobil Version---------------*/
+@media (max-width: 330px) {
+  .mobile {
+    @include responsive-flex(flex, column, center, null);
+    max-width: 330px;
+  }
+}
+
+/*--------------------Desktop Version--------------*/
+@media (min-width: 331px) {
+  .desktop {
+    @include responsive-grid(grid, 3, null);
+  }
+}

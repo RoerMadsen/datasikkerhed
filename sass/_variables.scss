@@ -1,0 +1,15 @@
+$primary: #1c494b;
+$primary-transparent: rgba(28, 73, 75, 0.5);
+$sucess: #164400;
+$sucess-transparent: rgba(22, 68, 0, 0.5);
+$fail: #9f1a1a;
+$fail-transparent: rgba(159, 26, 26, 0.5);
+
+$breakpoints: (
+  "sm": (
+    max: 330px,
+  ),
+  "lg": (
+    max: 2000px,
+  ),
+);
