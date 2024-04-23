@@ -200,8 +200,7 @@
     border: 5px solid #1c494b;
     color: #1c494b; }
   .btn-accept span {
-    line-height: 60px;
-    justify-content: s; }
+    line-height: 60px; }
 
 .list-no-style {
   list-style-type: none; }
