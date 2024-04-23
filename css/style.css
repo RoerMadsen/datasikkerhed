@@ -260,9 +260,13 @@ hr {
   text-decoration: none;
   line-height: 100%;
   padding: 0.5rem; }
+  .btn-accept:hover {
+    background-color: white;
+    border: 5px solid #1c494b;
+    color: #1c494b; }
 
 .btn-decline {
-  width: 90px;
+  width: 150px;
   height: 100%;
   background-color: #cccad0;
   font-family: "oswald";

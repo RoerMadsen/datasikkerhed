@@ -46,6 +46,6 @@
 
 .btn-decline {
   @include button-style(150px, 100%, 1.5rem, $grey, null);
-  color: red;
+  color: black;
   @include button-btn();
 }
