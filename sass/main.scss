@@ -1,0 +1,26 @@
+$primary: #1c494b;
+$primary-transparent: rgba(28, 73, 75, 0.5);
+$sucess: #164400;
+$sucess-transparent: rgba(22, 68, 0, 0.5);
+$fail: #9f1a1a;
+$fail-transparent: rgba(159, 26, 26, 0.5);
+
+$breakpoints: (
+  "sm": (
+    max: 330px,
+  ),
+  "lg": (
+    max: 2000px,
+  ),
+);
+
+/*---------------Generel styling og responsivitet-----------*/
+
+* {
+  max-width: 100%;
+}
+
+@import "fonts";
+@import "responsive";
+@import "base";
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");

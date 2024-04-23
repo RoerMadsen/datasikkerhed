@@ -18,6 +18,9 @@
 .flex-inline-row-center {
   @include responsive-flex(inline-flex, row, center, center);
 }
+.flex-inline-row-between {
+  @include responsive-flex(inline-flex, row, center, space-between);
+}
 
 /*---------------Grid----------*/
 @mixin responsive-grid($display, $columns, $gap) {
@@ -37,8 +40,15 @@
 @media (max-width: 330px) {
   .mobile {
     @include responsive-flex(flex, column, center, null);
-    max-width: 330px;
-    background-color: red;
+    max-width: 100%;
+
+    .container {
+      max-width: 330px;
+    }
+
+    .logo {
+      width: 110px;
+    }
   }
 }
 
@@ -46,6 +56,6 @@
 @media (min-width: 331px) {
   .desktop {
     @include responsive-grid(grid, 3, null);
-    background-color: red;
+    max-width: 500px;
   }
 }
