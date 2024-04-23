@@ -38,6 +38,7 @@
   .mobile {
     @include responsive-flex(flex, column, center, null);
     max-width: 330px;
+    background-color: red;
   }
 }
 
@@ -45,5 +46,6 @@
 @media (min-width: 331px) {
   .desktop {
     @include responsive-grid(grid, 3, null);
+    background-color: red;
   }
 }

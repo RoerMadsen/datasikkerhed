@@ -3,5 +3,22 @@
     "gulp": "^5.0.0",
     "gulp-sass": "^5.1.0",
     "sass": "^1.75.0"
-  }
+  },
+  "name": "datasikkerhed",
+  "version": "1.0.0",
+  "description": "Landing page for Datasikkerhed",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RoerMadsen/datasikkerhed.git"
+  },
+  "author": "Amanda Roer Madsen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RoerMadsen/datasikkerhed/issues"
+  },
+  "homepage": "https://github.com/RoerMadsen/datasikkerhed#readme"
 }
