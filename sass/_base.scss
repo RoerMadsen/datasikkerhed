@@ -14,79 +14,56 @@ $colors: (
   }
 }
 
-/*------------------------Fonte--------------*/
+/*------------------------Tekst--------------*/
 $font-family: "oswald";
 
-/*Mixin er et stykke kode der kan genbruges, ligesom en variabel.
-
-
-*/
-
-@mixin text-styles($font-size, $font-weight, $color) {
+@mixin text-styles($font-size, $font-weight, $alignment, $color) {
   font-family: $font-family;
   font-size: $font-size;
   font-weight: $font-weight;
-  text-align: center;
+  text-align: $alignment;
+  letter-spacing: 1px;
   color: $color;
 }
 
 .title {
-  @include text-styles(2rem, bold, $primary);
+  @include text-styles(2rem, bold, center, $primary);
 }
 
 .header {
-  @include text-styles(1.5rem, normal, $primary);
+  @include text-styles(1.5rem, normal, center, $primary);
 }
 
 .paragraph {
-  @include text-styles(1rem, 300, black);
+  @include text-styles(1rem, 300, center, black);
   padding: 0 0.5rem 0 0.5rem;
 }
-
-@mixin button-style($width, $background) {
-  display: block;
-  width: $width;
-  height: 60px;
-  margin: 0.5rem;
-  background-color: $background;
-  @include text-styles(1.5rem, 300, white);
-  border-radius: 10px;
-  border: 5px solid white;
-  text-decoration: none;
-  line-height: 60px;
+.profile-information {
+  @include text-styles(1rem, 300, left, black);
+}
+.profile-information-header {
+  @include text-styles(1rem, 500, left, black);
 }
 
-@mixin button-hover($bg-color, $border-color, $txt-color) {
-  background-color: $bg-color;
-  border: 5px solid $border-color;
-  color: $txt-color;
-}
-
-.btn-primary {
-  @include button-style(300px, $primary);
-  &:hover {
-    @include button-hover(white, $primary, $primary);
-  }
-}
-
-.btn-primary-light {
-  @include button-style(300px, $primary-transparent);
-  &:hover {
-    @include button-hover(white, $primary-transparent, $primary-transparent);
-  }
-}
-
-.btn-accept {
-  @include button-style(150px, $primary);
-  &:hover {
-    @include button-hover(white, $primary, $primary);
-  }
-
-  span {
-    line-height: 60px;
-  }
+.profile-name {
+  @include text-styles(1.5rem, 400, left, $primary);
 }
 
 .list-no-style {
   list-style-type: none;
+
+  li {
+    @include text-styles(1rem, 300, left, black);
+  }
+}
+
+.bi {
+  margin: 0 1rem 0 0;
+}
+
+.profile-picture {
+  border-radius: 50%;
+  border: 5px solid white;
+  max-width: 50%;
+  transform: translateY(20%);
 }

@@ -8,33 +8,39 @@
     <title>Test - HfD</title>
   </head>
   <body>
-    <header class="coverphoto">
-      <img src="" alt="profilbillede af falsk profil" class="circle" />
+    <header class="cover-picture">
+      <img
+        src="img/josh-pereira-wqP4m9a83nM-unsplash.jpg"
+        alt="profilbillede af falsk profil"
+        class="circle profile-picture"
+      />
     </header>
     <main>
       <article>
         <section>
           <h1 class="profile-name">Katrine Jensen</h1>
-          <div class="flex-row-center">
+          <div class="flex-inline-row-between">
             <button class="btn-accept">
-              <span class="flex-inline-row-between">
-                <i class="bi bi-person-plus"></i>Accepter</span
-              >
+              <span> <i class="bi bi-person-plus-fill"></i>Accepter</span>
             </button>
-            <button><span>Slet</span></button>
+            <button class="btn-decline">
+              <span> <i class="bi bi-person-dash-fill"></i>Slet</span>
+            </button>
           </div>
         </section>
+        <hr />
         <section>
           <ul class="about">
-            <li></li>
-            <li></li>
-            <li></li>
+            <li class="profile-information">Medlem siden 2024</li>
+            <li class="profile-information">Ingen fælles grupper</li>
+            <li class="profile-information">Ingen opslag</li>
           </ul>
         </section>
+        <hr />
         <section>
           <ul class="friends">
-            <li></li>
-            <li></li>
+            <li class="profile-information-header">Venner</li>
+            <li class="profile-information">0 fælles venner</li>
           </ul>
         </section>
       </article>

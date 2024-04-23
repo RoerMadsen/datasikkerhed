@@ -50,6 +50,13 @@
       width: 110px;
     }
   }
+  .cover-picture {
+    background-image: url("/img/cover-pigture-mobile.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 150px;
+    margin-bottom: 3rem;
+  }
 }
 
 /*--------------------Desktop Version--------------*/
@@ -57,5 +64,12 @@
   .desktop {
     @include responsive-grid(grid, 3, null);
     max-width: 500px;
+  }
+  .cover-picture {
+    background-image: url("/img/cover-photo-desktop.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 260px;
+    margin-bottom: 2rem;
   }
 }

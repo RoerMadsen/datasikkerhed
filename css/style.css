@@ -1,7 +1,16 @@
 /*---------------Generel styling og responsivitet-----------*/
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
 * {
-  max-width: 100%; }
+  max-width: 100%;
+  margin: 0;
+  padding: 0; }
+
+article {
+  padding: 0.5rem; }
+
+hr {
+  border: 1px solid #cccad0;
+  margin: 1rem 0 1rem 0; }
 
 @font-face {
   font-family: "Oswald";
@@ -85,14 +94,26 @@
     .mobile .container {
       max-width: 330px; }
     .mobile .logo {
-      width: 110px; } }
+      width: 110px; }
+  .cover-picture {
+    background-image: url("/img/cover-pigture-mobile.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 150px;
+    margin-bottom: 3rem; } }
 
 /*--------------------Desktop Version--------------*/
 @media (min-width: 331px) {
   .desktop {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    max-width: 500px; } }
+    max-width: 500px; }
+  .cover-picture {
+    background-image: url("/img/cover-photo-desktop.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 260px;
+    margin-bottom: 2rem; } }
 
 /*--------------------Farver----------*/
 .text-primary {
@@ -113,16 +134,13 @@
 .bg-fail {
   background-color: #9f1a1a; }
 
-/*------------------------Fonte--------------*/
-/*Mixin er et stykke kode der kan genbruges, ligesom en variabel.
-
-
-*/
+/*------------------------Tekst--------------*/
 .title {
   font-family: "oswald";
   font-size: 2rem;
   font-weight: bold;
   text-align: center;
+  letter-spacing: 1px;
   color: #1c494b; }
 
 .header {
@@ -130,6 +148,7 @@
   font-size: 1.5rem;
   font-weight: normal;
   text-align: center;
+  letter-spacing: 1px;
   color: #1c494b; }
 
 .paragraph {
@@ -137,8 +156,52 @@
   font-size: 1rem;
   font-weight: 300;
   text-align: center;
+  letter-spacing: 1px;
   color: black;
   padding: 0 0.5rem 0 0.5rem; }
+
+.profile-information {
+  font-family: "oswald";
+  font-size: 1rem;
+  font-weight: 300;
+  text-align: left;
+  letter-spacing: 1px;
+  color: black; }
+
+.profile-information-header {
+  font-family: "oswald";
+  font-size: 1rem;
+  font-weight: 500;
+  text-align: left;
+  letter-spacing: 1px;
+  color: black; }
+
+.profile-name {
+  font-family: "oswald";
+  font-size: 1.5rem;
+  font-weight: 400;
+  text-align: left;
+  letter-spacing: 1px;
+  color: #1c494b; }
+
+.list-no-style {
+  list-style-type: none; }
+  .list-no-style li {
+    font-family: "oswald";
+    font-size: 1rem;
+    font-weight: 300;
+    text-align: left;
+    letter-spacing: 1px;
+    color: black; }
+
+.bi {
+  margin: 0 1rem 0 0; }
+
+.profile-picture {
+  border-radius: 50%;
+  border: 5px solid white;
+  max-width: 50%;
+  transform: translateY(20%); }
 
 .btn-primary {
   display: block;
@@ -150,6 +213,7 @@
   font-size: 1.5rem;
   font-weight: 300;
   text-align: center;
+  letter-spacing: 1px;
   color: white;
   border-radius: 10px;
   border: 5px solid white;
@@ -170,6 +234,7 @@
   font-size: 1.5rem;
   font-weight: 300;
   text-align: center;
+  letter-spacing: 1px;
   color: white;
   border-radius: 10px;
   border: 5px solid white;
@@ -181,26 +246,34 @@
     color: rgba(28, 73, 75, 0.5); }
 
 .btn-accept {
-  display: block;
   width: 150px;
-  height: 60px;
-  margin: 0.5rem;
+  height: 100%;
   background-color: #1c494b;
   font-family: "oswald";
   font-size: 1.5rem;
   font-weight: 300;
   text-align: center;
+  letter-spacing: 1px;
   color: white;
   border-radius: 10px;
   border: 5px solid white;
   text-decoration: none;
-  line-height: 60px; }
-  .btn-accept:hover {
-    background-color: white;
-    border: 5px solid #1c494b;
-    color: #1c494b; }
-  .btn-accept span {
-    line-height: 60px; }
+  line-height: 100%;
+  padding: 0.5rem; }
 
-.list-no-style {
-  list-style-type: none; }
+.btn-decline {
+  width: 90px;
+  height: 100%;
+  background-color: #cccad0;
+  font-family: "oswald";
+  font-size: 1.5rem;
+  font-weight: 300;
+  text-align: center;
+  letter-spacing: 1px;
+  color: white;
+  border-radius: 10px;
+  border: 5px solid white;
+  text-decoration: none;
+  line-height: 100%;
+  color: black;
+  padding: 0.5rem; }

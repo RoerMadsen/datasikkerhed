@@ -1,0 +1,51 @@
+@mixin button-style($width, $height, $font-size, $background, $margin) {
+  width: $width;
+  height: $height;
+  margin: $margin;
+  background-color: $background;
+  @include text-styles($font-size, 300, center, white);
+  border-radius: 10px;
+  border: 5px solid white;
+  text-decoration: none;
+  line-height: $height;
+}
+
+@mixin button-hover($bg-color, $border-color, $txt-color) {
+  background-color: $bg-color;
+  border: 5px solid $border-color;
+  color: $txt-color;
+}
+
+.btn-primary {
+  display: block;
+  @include button-style(300px, 60px, 1.5rem, $primary, 0.5rem);
+  &:hover {
+    @include button-hover(white, $primary, $primary);
+  }
+}
+
+.btn-primary-light {
+  display: block;
+  @include button-style(300px, 60px, 1.5rem, $primary-transparent, 0.5rem);
+  &:hover {
+    @include button-hover(white, $primary-transparent, $primary-transparent);
+  }
+}
+
+@mixin button-btn {
+  padding: 0.5rem;
+}
+
+.btn-accept {
+  @include button-style(150px, 100%, 1.5rem, $primary, null);
+  @include button-btn();
+  &:hover {
+    @include button-hover(white, $primary, $primary);
+  }
+}
+
+.btn-decline {
+  @include button-style(150px, 100%, 1.5rem, $grey, null);
+  color: red;
+  @include button-btn();
+}
