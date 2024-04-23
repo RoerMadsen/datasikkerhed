@@ -5,6 +5,9 @@
   align-items: $align-items;
   justify-content: $justify-content;
 }
+.flex-row {
+  @include responsive-flex(flex, row, center, null);
+}
 
 .flex-col-center {
   @include responsive-flex(flex, column, center, center);

@@ -61,9 +61,31 @@ $font-family: "oswald";
   margin: 0 1rem 0 0;
 }
 
-.profile-picture {
+/* --------- Venneanmodning side ---------*/
+@mixin img-round($border, $width, $transform) {
   border-radius: 50%;
-  border: 5px solid white;
-  max-width: 50%;
-  transform: translateY(20%);
+  border: $border;
+  max-width: $width;
+  transform: $transform;
+}
+
+.profile-picture {
+  @include img-round(5px solid white, 50%, translatey(20%));
+}
+
+/*-------- Messenger side -------*/
+.messenger-header {
+  background-color: $light-grey;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+
+  .bi {
+    font-size: 1.5rem;
+    margin-left: 0.5rem;
+    color: $primary;
+  }
+}
+
+.messenger-picture {
+  @include img-round(null, 20%, null);
 }

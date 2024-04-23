@@ -17,6 +17,11 @@ hr {
   src: url("../Oswald-VariableFont_wght.ttf") format("truetype"); }
 
 /*---------------Flex---------*/
+.flex-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center; }
+
 .flex-col-center {
   display: flex;
   flex-direction: column;
@@ -197,11 +202,26 @@ hr {
 .bi {
   margin: 0 1rem 0 0; }
 
+/* --------- Venneanmodning side ---------*/
 .profile-picture {
   border-radius: 50%;
   border: 5px solid white;
   max-width: 50%;
-  transform: translateY(20%); }
+  transform: translatey(20%); }
+
+/*-------- Messenger side -------*/
+.messenger-header {
+  background-color: #ececec;
+  padding: 0.5rem;
+  margin-bottom: 1rem; }
+  .messenger-header .bi {
+    font-size: 1.5rem;
+    margin-left: 0.5rem;
+    color: #1c494b; }
+
+.messenger-picture {
+  border-radius: 50%;
+  max-width: 20%; }
 
 .btn-primary {
   display: block;
@@ -222,7 +242,8 @@ hr {
   .btn-primary:hover {
     background-color: white;
     border: 5px solid #1c494b;
-    color: #1c494b; }
+    color: #1c494b;
+    cursor: pointer; }
 
 .btn-primary-light {
   display: block;
@@ -243,7 +264,8 @@ hr {
   .btn-primary-light:hover {
     background-color: white;
     border: 5px solid rgba(28, 73, 75, 0.5);
-    color: rgba(28, 73, 75, 0.5); }
+    color: rgba(28, 73, 75, 0.5);
+    cursor: pointer; }
 
 .btn-accept {
   width: 150px;
@@ -263,7 +285,8 @@ hr {
   .btn-accept:hover {
     background-color: white;
     border: 5px solid #1c494b;
-    color: #1c494b; }
+    color: #1c494b;
+    cursor: pointer; }
 
 .btn-decline {
   width: 150px;
@@ -281,3 +304,8 @@ hr {
   line-height: 100%;
   color: black;
   padding: 0.5rem; }
+  .btn-decline:hover {
+    background-color: white;
+    border: 5px solid #cccad0;
+    color: black;
+    cursor: pointer; }
