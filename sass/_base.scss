@@ -33,9 +33,16 @@ $font-family: "oswald";
 .header {
   @include text-styles(1.5rem, normal, center, $primary);
 }
+.header-small {
+  @include text-styles(1rem, normal, center, $primary);
+}
 
 .paragraph {
   @include text-styles(1rem, 300, center, black);
+  padding: 0 0.5rem 0 0.5rem;
+}
+.paragraph-left {
+  @include text-styles(1rem, 300, left, black);
   padding: 0 0.5rem 0 0.5rem;
 }
 .profile-information {
@@ -110,4 +117,18 @@ $font-family: "oswald";
 }
 .messenger-name {
   @include text-styles(1rem, 300, left, $grey);
+}
+
+/*--------Informations side --------*/
+.hidden {
+  display: none;
+}
+
+.mini-quiz {
+  background-color: $primary-transparent;
+
+  h2,
+  p {
+    color: white;
+  }
 }

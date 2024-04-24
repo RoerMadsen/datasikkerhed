@@ -5,7 +5,7 @@
   background-color: $background;
   @include text-styles($font-size, 300, center, white);
   border-radius: 10px;
-  border: 5px solid white;
+
   text-decoration: none;
   line-height: $height;
 }
@@ -19,6 +19,7 @@
 
 .btn-primary {
   display: block;
+  border: 5px solid white;
   @include button-style(300px, 60px, 1.5rem, $primary, 0.5rem);
   &:hover {
     @include button-hover(white, $primary, $primary);
@@ -27,6 +28,7 @@
 
 .btn-primary-light {
   display: block;
+  border: 5px solid white;
   @include button-style(300px, 60px, 1.5rem, $primary-transparent, 0.5rem);
   &:hover {
     @include button-hover(white, $primary-transparent, $primary-transparent);
@@ -51,6 +53,16 @@
   @include button-btn();
   &:hover {
     @include button-hover(white, $grey, black);
+  }
+}
+
+.btn-guess {
+  @include button-style(auto, auto, 1rem, $primary, 0.5rem);
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  border: 3px solid $primary;
+  &:hover {
+    background-color: $primary-transparent;
+    box-shadow: 0px 0px 10px 5px rgba(255, 255, 255, 0.75);
   }
 }
 

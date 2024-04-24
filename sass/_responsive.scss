@@ -88,6 +88,36 @@
     .mobile-hidden {
       display: none;
     }
+
+    .mobile-row-sb {
+      @include responsive-flex(flex, row, center, space-between);
+    }
+
+    .info-fold-button {
+      height: 12px;
+      width: 23px;
+      margin-left: 6rem;
+      background-image: url("/img/arrow-down-sm.png");
+      background-position: center;
+      background-color: white;
+      border: none;
+    }
+
+    .info-header {
+      p,
+      h2 {
+        padding-top: 1rem;
+      }
+      margin-bottom: 2rem;
+    }
+
+    .info-text-block {
+      margin-bottom: 2rem;
+
+      h3 {
+        margin-bottom: 1rem;
+      }
+    }
   }
   .cover-picture {
     background-image: url("/img/cover-pigture-mobile.png");
