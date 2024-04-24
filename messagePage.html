@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="shortcut icon" href="img/HFD-favicon.png" type="image/x-icon" />
-    <title>Ny Besked!</title>
+    <title>Du har modtaget en ny besked!</title>
   </head>
-  <body>
+  <body class="mobile desktop">
     <header class="messenger-header flex-inline-row-between">
       <div class="flex-row">
         <a href="testYourself.html"
@@ -28,22 +28,42 @@
       </div>
     </header>
     <main>
-      <section>
-        <img
-          src="img/josh-pereira-wqP4m9a83nM-unsplash.jpg"
-          class="messenger-picture"
-          alt="Profilbillede: en smuk lyshåret kvinde i badetøj"
-        />
-        <div>
-          <h2></h2>
-          <div></div>
-          <div></div>
+      <section class="grid-messenger">
+        <!-- <div class="col-span-1 start-row-1 start-col-1">
+          <img
+            src="img/josh-pereira-wqP4m9a83nM-unsplash.jpg"
+            class="messenger-picture"
+            alt="Profilbillede: en smuk lyshåret kvinde i badetøj"
+          />
+        </div> -->
+        <div class="col-span-2 row-span-1 start-col-1">
+          <h2 class="messenger-name">Katrine Jensen</h2>
         </div>
-      </section>
-      <section><img src="" alt="" /></section>
-      <section>
-        <div></div>
-        <figure></figure>
+        <div class="messages col-span-2 start-col-1">
+          <div class="long-message message">
+            <p>
+              Hej! Jeg er model og vil gerne give dig adgang til mit private
+              album og høre hvad du synes.
+            </p>
+            <p>
+              Du skal bare trykke på linket og så skrive til mig når du har set
+              billederne
+            </p>
+          </div>
+          <button class="messenger-link-btn message">
+            http//:www.synligtFalskLink.org
+          </button>
+        </div>
+        <div class="typing-message message start-row-3 start-col-2">
+          <i class="bi bi-three-dots"></i>
+        </div>
+        <div class="input-messenger message start-col-1 col-span-1 start-row-4">
+          psst... du kan trykke på trekanten til højre, for at anmelde beskeden,
+          eller du kan trykke på linket og se hvad der kan ske.
+        </div>
+        <button class="block-report-btn col-span-1 start-row-4 start-col-2">
+          <i class="bi bi-exclamation-triangle-fill"></i>
+        </button>
       </section>
     </main>
   </body>

@@ -22,7 +22,7 @@ $font-family: "oswald";
   font-size: $font-size;
   font-weight: $font-weight;
   text-align: $alignment;
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
   color: $color;
 }
 
@@ -62,17 +62,9 @@ $font-family: "oswald";
 }
 
 /* --------- Venneanmodning side ---------*/
-@mixin img-round($border, $width, $transform) {
-  border-radius: 50%;
-  border: $border;
-  max-width: $width;
-  transform: $transform;
+.post {
+  padding: 2rem;
 }
-
-.profile-picture {
-  @include img-round(5px solid white, 50%, translatey(20%));
-}
-
 /*-------- Messenger side -------*/
 .messenger-header {
   background-color: $light-grey;
@@ -86,6 +78,36 @@ $font-family: "oswald";
   }
 }
 
+.bi-exclamation-triangle-fill {
+  color: $primary;
+  font-size: 3rem;
+  &:hover {
+    color: $sucess;
+    cursor: pointer;
+  }
+}
+
+.bi-three-dots {
+  font-size: 1.5rem;
+  text-align: center;
+  color: $primary;
+  float: right;
+}
 .messenger-picture {
   @include img-round(null, 20%, null);
+  min-width: 15%;
+}
+
+.message {
+  @include text-styles(1rem, 300, left, black);
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  background-color: $light-grey;
+  border-radius: 10px;
+  margin: 0.5rem;
+}
+.typing-message {
+  margin-bottom: 2rem;
+}
+.messenger-name {
+  @include text-styles(1rem, 300, left, $grey);
 }

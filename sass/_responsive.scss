@@ -28,7 +28,7 @@
 /*---------------Grid----------*/
 @mixin responsive-grid($display, $columns, $gap) {
   display: $display;
-  grid-template-columns: repeat($columns, 1fr);
+  grid-template-columns: $columns;
   gap: $gap;
 }
 
@@ -38,7 +38,36 @@
     grid-column: span $i;
   }
 }
+@for $i from 1 to 13 {
+  .row-span-#{$i} {
+    grid-row: span $i;
+  }
+}
+@for $i from 1 to 6 {
+  .start-row-#{$i} {
+    grid-row-start: $i;
+  }
+}
+@for $i from 1 to 6 {
+  .start-col-#{$i} {
+    grid-column-start: $i;
+  }
+}
 
+.grid-messenger {
+  @include responsive-grid(grid, 2fr 1fr, 0);
+  width: 100%;
+  height: auto;
+  padding: 0.5rem;
+  grid-template-rows: 0.2fr 1.7fr 0.1fr 1fr;
+}
+
+@mixin img-round($border, $width, $transform) {
+  border-radius: 50%;
+  border: $border;
+  max-width: $width;
+  transform: $transform;
+}
 /*--------------------mobil Version---------------*/
 @media (max-width: 330px) {
   .mobile {
@@ -51,6 +80,13 @@
 
     .logo {
       width: 110px;
+    }
+    .profile-picture {
+      @include img-round(5px solid white, 50%, translatey(20%));
+    }
+
+    .mobile-hidden {
+      display: none;
     }
   }
   .cover-picture {
@@ -66,7 +102,32 @@
 @media (min-width: 331px) {
   .desktop {
     @include responsive-grid(grid, 3, null);
-    max-width: 500px;
+    max-width: 877px;
+    margin: 0 auto;
+
+    .logo {
+      max-width: 200px;
+    }
+
+    .profile-picture {
+      @include img-round(5px solid white, 25%, translatey(35%));
+    }
+
+    .desktop-row-sb {
+      @include responsive-flex(flex, row, center, space-between);
+
+      .about li {
+        margin-right: 1.5rem;
+      }
+
+      .friends li {
+        margin-left: 1.5rem;
+      }
+    }
+
+    .desktop-hidden {
+      display: none;
+    }
   }
   .cover-picture {
     background-image: url("/img/cover-photo-desktop.png");

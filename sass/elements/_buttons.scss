@@ -53,3 +53,19 @@
     @include button-hover(white, $grey, black);
   }
 }
+
+.messenger-link-btn {
+  text-decoration: underline;
+  color: $primary;
+  border: none;
+
+  &:hover {
+    color: $fail;
+    cursor: pointer;
+  }
+}
+
+.block-report-btn {
+  border: none;
+  background-color: white;
+}

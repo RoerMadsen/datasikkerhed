@@ -7,7 +7,7 @@
     <link rel="shortcut icon" href="img/HFD-favicon.png" type="image/x-icon" />
     <title>Test - HfD</title>
   </head>
-  <body>
+  <body class="desktop mobile">
     <header class="cover-picture">
       <img
         src="img/josh-pereira-wqP4m9a83nM-unsplash.jpg"
@@ -17,7 +17,7 @@
     </header>
     <main>
       <article>
-        <section>
+        <section class="desktop-row-sb">
           <h1 class="profile-name">Katrine Jensen</h1>
           <div class="flex-inline-row-between">
             <button class="btn-accept">
@@ -29,20 +29,25 @@
           </div>
         </section>
         <hr />
-        <section>
-          <ul class="about">
+        <section class="desktop-row-sb">
+          <ul class="about list-no-style desktop-row-sb">
             <li class="profile-information">Medlem siden 2024</li>
             <li class="profile-information">Ingen fælles grupper</li>
             <li class="profile-information">Ingen opslag</li>
           </ul>
-        </section>
-        <hr />
-        <section>
-          <ul class="friends">
-            <li class="profile-information-header">Venner</li>
+          <hr class="desktop-hidden" />
+          <ul class="friends list-no-style desktop-row-sb">
+            <li class="profile-information-header">3 Venner</li>
             <li class="profile-information">0 fælles venner</li>
           </ul>
+          <hr class="mobile-hidden" />
         </section>
+      </article>
+
+      <article>
+        <div class="message">
+          <p class="paragraph post">Der er ingen opslag at vise</p>
+        </div>
       </article>
     </main>
   </body>

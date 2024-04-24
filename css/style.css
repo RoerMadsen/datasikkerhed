@@ -5,12 +5,18 @@
   margin: 0;
   padding: 0; }
 
+body {
+  overflow-x: hidden; }
+
 article {
   padding: 0.5rem; }
 
 hr {
   border: 1px solid #cccad0;
   margin: 1rem 0 1rem 0; }
+
+.container {
+  padding: 0 1rem 0 1rem; }
 
 @font-face {
   font-family: "Oswald";
@@ -89,6 +95,81 @@ hr {
 .col-span-12 {
   grid-column: span 12; }
 
+.row-span-1 {
+  grid-row: span 1; }
+
+.row-span-2 {
+  grid-row: span 2; }
+
+.row-span-3 {
+  grid-row: span 3; }
+
+.row-span-4 {
+  grid-row: span 4; }
+
+.row-span-5 {
+  grid-row: span 5; }
+
+.row-span-6 {
+  grid-row: span 6; }
+
+.row-span-7 {
+  grid-row: span 7; }
+
+.row-span-8 {
+  grid-row: span 8; }
+
+.row-span-9 {
+  grid-row: span 9; }
+
+.row-span-10 {
+  grid-row: span 10; }
+
+.row-span-11 {
+  grid-row: span 11; }
+
+.row-span-12 {
+  grid-row: span 12; }
+
+.start-row-1 {
+  grid-row-start: 1; }
+
+.start-row-2 {
+  grid-row-start: 2; }
+
+.start-row-3 {
+  grid-row-start: 3; }
+
+.start-row-4 {
+  grid-row-start: 4; }
+
+.start-row-5 {
+  grid-row-start: 5; }
+
+.start-col-1 {
+  grid-column-start: 1; }
+
+.start-col-2 {
+  grid-column-start: 2; }
+
+.start-col-3 {
+  grid-column-start: 3; }
+
+.start-col-4 {
+  grid-column-start: 4; }
+
+.start-col-5 {
+  grid-column-start: 5; }
+
+.grid-messenger {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 0;
+  width: 100%;
+  height: auto;
+  padding: 0.5rem;
+  grid-template-rows: 0.2fr 1.7fr 0.1fr 1fr; }
+
 /*--------------------mobil Version---------------*/
 @media (max-width: 330px) {
   .mobile {
@@ -100,6 +181,13 @@ hr {
       max-width: 330px; }
     .mobile .logo {
       width: 110px; }
+    .mobile .profile-picture {
+      border-radius: 50%;
+      border: 5px solid white;
+      max-width: 50%;
+      transform: translatey(20%); }
+    .mobile .mobile-hidden {
+      display: none; }
   .cover-picture {
     background-image: url("/img/cover-pigture-mobile.png");
     background-repeat: no-repeat;
@@ -111,8 +199,27 @@ hr {
 @media (min-width: 331px) {
   .desktop {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    max-width: 500px; }
+    grid-template-columns: 3;
+    max-width: 877px;
+    margin: 0 auto; }
+    .desktop .logo {
+      max-width: 200px; }
+    .desktop .profile-picture {
+      border-radius: 50%;
+      border: 5px solid white;
+      max-width: 25%;
+      transform: translatey(35%); }
+    .desktop .desktop-row-sb {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between; }
+      .desktop .desktop-row-sb .about li {
+        margin-right: 1.5rem; }
+      .desktop .desktop-row-sb .friends li {
+        margin-left: 1.5rem; }
+    .desktop .desktop-hidden {
+      display: none; }
   .cover-picture {
     background-image: url("/img/cover-photo-desktop.png");
     background-repeat: no-repeat;
@@ -145,7 +252,7 @@ hr {
   font-size: 2rem;
   font-weight: bold;
   text-align: center;
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
   color: #1c494b; }
 
 .header {
@@ -153,7 +260,7 @@ hr {
   font-size: 1.5rem;
   font-weight: normal;
   text-align: center;
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
   color: #1c494b; }
 
 .paragraph {
@@ -161,7 +268,7 @@ hr {
   font-size: 1rem;
   font-weight: 300;
   text-align: center;
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
   color: black;
   padding: 0 0.5rem 0 0.5rem; }
 
@@ -170,7 +277,7 @@ hr {
   font-size: 1rem;
   font-weight: 300;
   text-align: left;
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
   color: black; }
 
 .profile-information-header {
@@ -178,7 +285,7 @@ hr {
   font-size: 1rem;
   font-weight: 500;
   text-align: left;
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
   color: black; }
 
 .profile-name {
@@ -186,7 +293,7 @@ hr {
   font-size: 1.5rem;
   font-weight: 400;
   text-align: left;
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
   color: #1c494b; }
 
 .list-no-style {
@@ -196,18 +303,15 @@ hr {
     font-size: 1rem;
     font-weight: 300;
     text-align: left;
-    letter-spacing: 1px;
+    letter-spacing: 0.5px;
     color: black; }
 
 .bi {
   margin: 0 1rem 0 0; }
 
 /* --------- Venneanmodning side ---------*/
-.profile-picture {
-  border-radius: 50%;
-  border: 5px solid white;
-  max-width: 50%;
-  transform: translatey(20%); }
+.post {
+  padding: 2rem; }
 
 /*-------- Messenger side -------*/
 .messenger-header {
@@ -219,9 +323,46 @@ hr {
     margin-left: 0.5rem;
     color: #1c494b; }
 
+.bi-exclamation-triangle-fill {
+  color: #1c494b;
+  font-size: 3rem; }
+  .bi-exclamation-triangle-fill:hover {
+    color: #164400;
+    cursor: pointer; }
+
+.bi-three-dots {
+  font-size: 1.5rem;
+  text-align: center;
+  color: #1c494b;
+  float: right; }
+
 .messenger-picture {
   border-radius: 50%;
-  max-width: 20%; }
+  max-width: 20%;
+  min-width: 15%; }
+
+.message {
+  font-family: "oswald";
+  font-size: 1rem;
+  font-weight: 300;
+  text-align: left;
+  letter-spacing: 0.5px;
+  color: black;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  background-color: #ececec;
+  border-radius: 10px;
+  margin: 0.5rem; }
+
+.typing-message {
+  margin-bottom: 2rem; }
+
+.messenger-name {
+  font-family: "oswald";
+  font-size: 1rem;
+  font-weight: 300;
+  text-align: left;
+  letter-spacing: 0.5px;
+  color: #cccad0; }
 
 .btn-primary {
   display: block;
@@ -233,7 +374,7 @@ hr {
   font-size: 1.5rem;
   font-weight: 300;
   text-align: center;
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
   color: white;
   border-radius: 10px;
   border: 5px solid white;
@@ -255,7 +396,7 @@ hr {
   font-size: 1.5rem;
   font-weight: 300;
   text-align: center;
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
   color: white;
   border-radius: 10px;
   border: 5px solid white;
@@ -275,7 +416,7 @@ hr {
   font-size: 1.5rem;
   font-weight: 300;
   text-align: center;
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
   color: white;
   border-radius: 10px;
   border: 5px solid white;
@@ -296,7 +437,7 @@ hr {
   font-size: 1.5rem;
   font-weight: 300;
   text-align: center;
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
   color: white;
   border-radius: 10px;
   border: 5px solid white;
@@ -309,3 +450,15 @@ hr {
     border: 5px solid #cccad0;
     color: black;
     cursor: pointer; }
+
+.messenger-link-btn {
+  text-decoration: underline;
+  color: #1c494b;
+  border: none; }
+  .messenger-link-btn:hover {
+    color: #9f1a1a;
+    cursor: pointer; }
+
+.block-report-btn {
+  border: none;
+  background-color: white; }
