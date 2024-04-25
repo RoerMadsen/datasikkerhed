@@ -15,10 +15,10 @@ $colors: (
 }
 
 /*------------------------Tekst--------------*/
-$font-family: "oswald";
+$font-family: "Oswald-VariableFont_wght.ttf", sans-serif;
 
-@mixin text-styles($font-size, $font-weight, $alignment, $color) {
-  font-family: $font-family;
+@mixin text-styles($font-type, $font-size, $font-weight, $alignment, $color) {
+  font-family: $font-type;
   font-size: $font-size;
   font-weight: $font-weight;
   text-align: $alignment;
@@ -27,46 +27,49 @@ $font-family: "oswald";
 }
 
 .title {
-  @include text-styles(2rem, bold, center, $primary);
+  @include text-styles($font-family, 2rem, bold, center, $primary);
 }
 
 .header {
-  @include text-styles(1.5rem, normal, center, $primary);
+  @include text-styles($font-family, 1.5rem, 600, center, $primary);
 }
 .header-small {
-  @include text-styles(1rem, normal, center, $primary);
+  @include text-styles($font-family, 1rem, 500, center, $primary);
+  margin-bottom: 1rem;
 }
 
 .paragraph {
-  @include text-styles(1rem, 300, center, black);
+  @include text-styles(sans-serif, 1rem, 400, center, black);
   padding: 0 0.5rem 0 0.5rem;
 }
 .paragraph-left {
-  @include text-styles(1rem, 300, left, black);
+  @include text-styles(sans-serif, 1rem, 300, left, black);
   padding: 0 0.5rem 0 0.5rem;
 }
 .profile-information {
-  @include text-styles(1rem, 300, left, black);
+  @include text-styles($font-family, 1rem, 300, left, black);
 }
 .profile-information-header {
-  @include text-styles(1rem, 500, left, black);
+  @include text-styles($font-family, 1rem, 500, left, black);
 }
 
 .profile-name {
-  @include text-styles(1.5rem, 400, left, $primary);
+  @include text-styles($font-family, 1.5rem, 400, left, $primary);
 }
 
 .list-no-style {
   list-style-type: none;
 
   li {
-    @include text-styles(1rem, 300, left, black);
+    @include text-styles($font-family, 1rem, 300, left, black);
   }
 }
 
 .bi {
   margin: 0 1rem 0 0;
 }
+
+/* ----------- Forside ------*/
 
 /* --------- Venneanmodning side ---------*/
 .post {
@@ -106,7 +109,7 @@ $font-family: "oswald";
 }
 
 .message {
-  @include text-styles(1rem, 300, left, black);
+  @include text-styles(sans-serif, 1rem, 300, left, black);
   padding: 0.5rem 1rem 0.5rem 1rem;
   background-color: $light-grey;
   border-radius: 10px;
@@ -116,12 +119,38 @@ $font-family: "oswald";
   margin-bottom: 2rem;
 }
 .messenger-name {
-  @include text-styles(1rem, 300, left, $grey);
+  @include text-styles($font-family, 1rem, 300, left, $grey);
 }
 
 /*--------Informations side --------*/
 .hidden {
   display: none;
+  opacity: 0;
+}
+
+.return-header {
+  position: sticky;
+  top: 0;
+  height: 15px;
+  padding: 1.5rem;
+  width: 100%;
+  text-align: right;
+  background-color: rbg(0, 0, 0, 0.4);
+  backdrop-filter: blur(10px);
+
+  a {
+    color: $primary;
+    text-decoration: none;
+    font-size: 1.5rem;
+
+    &:hover {
+      color: $grey;
+    }
+  }
+}
+
+.info-header {
+  margin-bottom: 3rem;
 }
 
 .mini-quiz {
@@ -130,5 +159,32 @@ $font-family: "oswald";
   h2,
   p {
     color: white;
+    margin-bottom: 1rem;
   }
+}
+
+.percentage-quiz-input {
+  border: 3px solid white;
+  padding: 0.5rem;
+  border-radius: 10px;
+
+  &:focus,
+  &:hover {
+    outline: none;
+    border: 3px solid $primary;
+  }
+}
+
+.padding-1 {
+  padding: 1rem 0 1rem 0;
+}
+
+.identity-scale label {
+  display: inline-block;
+  margin: 0.2rem;
+  @include text-styles($font-family, 1rem, 300, center, white);
+}
+
+#slider {
+  width: 100%;
 }

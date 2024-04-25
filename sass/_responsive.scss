@@ -12,6 +12,9 @@
 .flex-col-center {
   @include responsive-flex(flex, column, center, center);
 }
+.flex-col-reverse {
+  @include responsive-flex(flex, column-reverse, center, center);
+}
 .flex-row-center {
   @include responsive-flex(flex, row, center, center);
 }
@@ -68,21 +71,19 @@
   max-width: $width;
   transform: $transform;
 }
-/*--------------------mobil Version---------------*/
+
+/*----------------------------------------mobil Version-----------------------------*/
 @media (max-width: 330px) {
   .mobile {
     @include responsive-flex(flex, column, center, null);
     max-width: 100%;
 
     .container {
-      max-width: 330px;
+      max-width: 310px;
     }
 
     .logo {
       width: 110px;
-    }
-    .profile-picture {
-      @include img-round(5px solid white, 50%, translatey(20%));
     }
 
     .mobile-hidden {
@@ -93,6 +94,7 @@
       @include responsive-flex(flex, row, center, space-between);
     }
 
+    //--------Information side
     .info-fold-button {
       height: 12px;
       width: 23px;
@@ -117,8 +119,25 @@
       h3 {
         margin-bottom: 1rem;
       }
+
+      p {
+        text-align: left;
+      }
     }
   }
+
+  .mini-quiz {
+    padding: 1rem;
+  }
+
+  .percentage-fieldset {
+    @include responsive-flex(flex, row, center, center);
+
+    input {
+      max-width: 50%;
+    }
+  }
+  /////////////// Test startside
   .cover-picture {
     background-image: url("/img/cover-pigture-mobile.png");
     background-repeat: no-repeat;
@@ -126,44 +145,78 @@
     height: 150px;
     margin-bottom: 3rem;
   }
+
+  .profile-picture {
+    @include img-round(5px solid white, 50%, translatey(20%));
+  }
 }
 
-/*--------------------Desktop Version--------------*/
+/*----------------------------------------Desktop Version---------------------------*/
 @media (min-width: 331px) {
   .desktop {
     @include responsive-grid(grid, 3, null);
     max-width: 877px;
     margin: 0 auto;
 
-    .logo {
-      max-width: 200px;
-    }
-
-    .profile-picture {
-      @include img-round(5px solid white, 25%, translatey(35%));
-    }
-
     .desktop-row-sb {
       @include responsive-flex(flex, row, center, space-between);
-
-      .about li {
-        margin-right: 1.5rem;
-      }
-
-      .friends li {
-        margin-left: 1.5rem;
-      }
     }
 
     .desktop-hidden {
       display: none;
     }
+    /////////////////////Forside
+    .frontpage {
+      padding-top: 2rem;
+
+      h1,
+      p {
+        padding: 1rem 0;
+      }
+    }
+    .logo {
+      max-width: 200px;
+    }
+
+    //////////////////Test startside
+    .cover-picture {
+      background-image: url("/img/cover-photo-desktop.png");
+      background-repeat: no-repeat;
+      background-position: center;
+      height: 260px;
+      margin-bottom: 2rem;
+    }
+
+    .about li {
+      margin-right: 1.5rem;
+    }
+
+    .friends li {
+      margin-left: 1.5rem;
+    }
+    .profile-picture {
+      @include img-round(5px solid white, 25%, translatey(35%));
+    }
+
+    //////////////////Informations side
+    .info-text-block {
+      p {
+        padding: 0 4rem;
+        text-align: left;
+      }
+    }
   }
-  .cover-picture {
-    background-image: url("/img/cover-photo-desktop.png");
-    background-repeat: no-repeat;
-    background-position: center;
-    height: 260px;
-    margin-bottom: 2rem;
+
+  .mini-quiz {
+    padding: 2rem;
+    margin: 2rem 0;
+  }
+
+  .identity-scale label {
+    width: 4rem;
+  }
+
+  .identity-fieldset {
+    @include responsive-flex(flex, row, center, center);
   }
 }

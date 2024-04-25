@@ -5,24 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="shortcut icon" href="img/HFD-favicon.png" type="image/x-icon" />
+    <script src="infoPage.js" defer></script>
     <title>Læs om Datasikkerhed</title>
   </head>
   <body class="mobile desktop">
-    <header class="container info-header">
-      <h1 class="title pt-1">Sikkerhed på internettet</h1>
-      <h2 class="header pt-1">
-        Der er mange former for svindel på internettet og det kan have store
-        konsekvenser for ofrene
-      </h2>
-      <p class="paragraph">
-        Svindel på nettet er et stigende problem, og svindlerne bliver hele
-        tiden mere dygtige i deres tilgange. Det er vigtigt at være opmærksom og
-        fornuftig, når man bruger nettet for at undgå at blive et offer. Man kan
-        læse mere om de forskellige former for svindel og konsekvenserne heraf
-        for at være bedre rustet mod truslerne.
-      </p>
+    <header class="return-header">
+      <a href="index.html" class="paragraph">Tilbage til forsiden</a>
     </header>
     <main class="container">
+      <div class="info-header">
+        <h1 class="title padding-1">Sikkerhed på internettet</h1>
+        <h2 class="header padding-1">
+          Der er mange former for svindel på internettet og det kan have store
+          konsekvenser for ofrene
+        </h2>
+        <p class="paragraph">
+          Svindel på nettet er et stigende problem, og svindlerne bliver hele
+          tiden mere dygtige i deres tilgange. Det er vigtigt at være opmærksom
+          og fornuftig, når man bruger nettet for at undgå at blive et offer.
+          Man kan læse mere om de forskellige former for svindel og
+          konsekvenserne heraf for at være bedre rustet mod truslerne.
+        </p>
+      </div>
+
       <div class="info-text-block">
         <div class="text-block-title mobile-row-sb">
           <h3 class="header-small">Passwordbeskyttelse</h3>
@@ -30,17 +35,18 @@
             <span class="hidden">Læs mere</span>
           </button>
         </div>
-        <p class="paragraph-left" id="passwordbeskyttelse">
+        <p class="paragraph" id="passwordbeskyttelse">
           Passwordbeskyttelse er afgørende for at sikre dine onlinekonti mod
           svindel og misbrug. Ved at vælge stærke og unikke passwords kan du
-          minimere risikoen for, at dine konti bliver kompromitteret. <br />Det
-          anbefales at bruge en kombination af store og små bogstaver, tal og
-          specialtegn og undgå lette gæt, såsom almindelige ord eller personlige
-          oplysninger. <br />Desuden bør du undgå at genbruge passwords på tværs
-          af forskellige konti, da dette øger din sårbarhed, hvis én konto
-          bliver kompromitteret. Aktivering af tofaktorautentificering er også
-          en effektiv måde at forstærke sikkerheden på ved at kræve en ekstra
-          form for bekræftelse ud over dit password.<br />
+          minimere risikoen for, at dine konti bliver kompromitteret. <br />
+          <br />Det anbefales at bruge en kombination af store og små bogstaver,
+          tal og specialtegn og undgå lette gæt, såsom almindelige ord eller
+          personlige oplysninger. <br />
+          <br />Desuden bør du undgå at genbruge passwords på tværs af
+          forskellige konti, da dette øger din sårbarhed, hvis én konto bliver
+          kompromitteret. Aktivering af tofaktorautentificering er også en
+          effektiv måde at forstærke sikkerheden på ved at kræve en ekstra form
+          for bekræftelse ud over dit password.<br /><br />
           Endelig er det vigtigt at opdatere dine passwords regelmæssigt og være
           opmærksom på phishingforsøg og andre former for svindel, der kan narre
           dig til at afsløre dine adgangskoder.
@@ -65,15 +71,23 @@
         </p>
         <hr />
       </div>
-      <div class="mini-quiz">
+
+      <!--------- Mini quiz "gæt hvor mange procent..." -------->
+      <div class="mini-quiz percentageQuiz flex-col-center">
         <h2 class="header">Beskyt dig selv og dine personlige oplysninger</h2>
-        <p class="paragraph">
+        <p class="paragraph percentage-message">
           Kan du gætte hvor mange procent af datalæk der skyldes svage eller
           genbrugte passwords? <br />
           (gæt i hele 10'er tal)
         </p>
-        <input type="text" class="percentage-quiz" />
-        <button type="submit" class="btn-guess">Gæt</button>
+        <div class="percentage-fieldset">
+          <input
+            type="text"
+            class="percentage-quiz-input"
+            placeholder="Skriv dit bud her..."
+          />
+          <button type="submit" class="btn-guess percentage-guess">Gæt</button>
+        </div>
       </div>
 
       <div class="info-text-block">
@@ -108,15 +122,47 @@
           skadelige aktiviteter. De kan sende spam-e-mails, sprede malware eller
           udføre phishing-angreb ved hjælp af dine kontakter og personlige
           oplysninger. Dette kan ikke kun skade din egen digitale sikkerhed, men
-          også bringe andre i fare, hvis de falder for angrebene. Tab af
-          fortrolige oplysninger: Med adgang til dine konti kan angribere stjæle
-          eller offentliggøre dine følsomme data, herunder personlige fotos,
-          dokumenter og finansielle oplysninger. Dette kan føre til alvorlige
-          konsekvenser, såsom chantage, tab af privatlivets fred og endda fysisk
-          fare, hvis dine oplysninger falder i de forkerte hænder.
+          også bringe andre i fare, hvis de falder for angrebene.
+          <br />
+          <br />
+          af fortrolige oplysninger: Med adgang til dine konti kan angribere
+          stjæle eller offentliggøre dine følsomme data, herunder personlige
+          fotos, dokumenter og finansielle oplysninger. Dette kan føre til
+          alvorlige konsekvenser, såsom chantage, tab af privatlivets fred og
+          endda fysisk fare, hvis dine oplysninger falder i de forkerte hænder.
         </p>
         <hr />
       </div>
+
+      <!--------- Mini quiz "identitesvindel..." -------->
+      <div class="mini-quiz identityQuiz flex-col-center">
+        <h2 class="header">Identitessvindel kan ske for alle</h2>
+        <p class="paragraph identity-message">
+          kan du gætte hvor mange tusind danskere, der gennemsnitligt bliver
+          ofte for identitesvindel? <br />
+        </p>
+        <div class="identity-fieldset">
+          <div class="identity-scale">
+            <div class="flex-row-sb">
+              <label for="slider-5000">5</label>
+              <label for="slider-10000">10</label>
+              <label for="slider-15000">15</label>
+              <label for="slider-20000">20</label>
+            </div>
+            <input
+              type="range"
+              min="5"
+              max="20"
+              step="5"
+              value="5"
+              id="slider"
+            />
+          </div>
+
+          <button type="submit" class="btn-guess identity-guess">Gæt</button>
+        </div>
+      </div>
+
       <div class="info-text-block">
         <div class="text-block-title mobile-row-sb">
           <h3 class="header-small">Finansiel Svindel</h3>

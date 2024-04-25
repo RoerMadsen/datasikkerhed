@@ -13,7 +13,7 @@ article {
 
 hr {
   border: 1px solid #cccad0;
-  margin: 1rem 0 1rem 0; }
+  margin: 2rem 0 2rem 0; }
 
 .container {
   padding: 0 1rem 0 1rem; }
@@ -31,6 +31,12 @@ hr {
 .flex-col-center {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center; }
+
+.flex-col-reverse {
+  display: flex;
+  flex-direction: column-reverse;
   align-items: center;
   justify-content: center; }
 
@@ -170,7 +176,7 @@ hr {
   padding: 0.5rem;
   grid-template-rows: 0.2fr 1.7fr 0.1fr 1fr; }
 
-/*--------------------mobil Version---------------*/
+/*----------------------------------------mobil Version-----------------------------*/
 @media (max-width: 330px) {
   .mobile {
     display: flex;
@@ -178,14 +184,9 @@ hr {
     align-items: center;
     max-width: 100%; }
     .mobile .container {
-      max-width: 330px; }
+      max-width: 310px; }
     .mobile .logo {
       width: 110px; }
-    .mobile .profile-picture {
-      border-radius: 50%;
-      border: 5px solid white;
-      max-width: 50%;
-      transform: translatey(20%); }
     .mobile .mobile-hidden {
       display: none; }
     .mobile .mobile-row-sb {
@@ -210,44 +211,78 @@ hr {
       margin-bottom: 2rem; }
       .mobile .info-text-block h3 {
         margin-bottom: 1rem; }
+      .mobile .info-text-block p {
+        text-align: left; }
+  .mini-quiz {
+    padding: 1rem; }
+  .percentage-fieldset {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center; }
+    .percentage-fieldset input {
+      max-width: 50%; }
   .cover-picture {
     background-image: url("/img/cover-pigture-mobile.png");
     background-repeat: no-repeat;
     background-position: center;
     height: 150px;
-    margin-bottom: 3rem; } }
+    margin-bottom: 3rem; }
+  .profile-picture {
+    border-radius: 50%;
+    border: 5px solid white;
+    max-width: 50%;
+    transform: translatey(20%); } }
 
-/*--------------------Desktop Version--------------*/
+/*----------------------------------------Desktop Version---------------------------*/
 @media (min-width: 331px) {
   .desktop {
     display: grid;
     grid-template-columns: 3;
     max-width: 877px;
     margin: 0 auto; }
-    .desktop .logo {
-      max-width: 200px; }
-    .desktop .profile-picture {
-      border-radius: 50%;
-      border: 5px solid white;
-      max-width: 25%;
-      transform: translatey(35%); }
     .desktop .desktop-row-sb {
       display: flex;
       flex-direction: row;
       align-items: center;
       justify-content: space-between; }
-      .desktop .desktop-row-sb .about li {
-        margin-right: 1.5rem; }
-      .desktop .desktop-row-sb .friends li {
-        margin-left: 1.5rem; }
     .desktop .desktop-hidden {
       display: none; }
-  .cover-picture {
-    background-image: url("/img/cover-photo-desktop.png");
-    background-repeat: no-repeat;
-    background-position: center;
-    height: 260px;
-    margin-bottom: 2rem; } }
+    .desktop .frontpage {
+      padding-top: 2rem; }
+      .desktop .frontpage h1,
+      .desktop .frontpage p {
+        padding: 1rem 0; }
+    .desktop .logo {
+      max-width: 200px; }
+    .desktop .cover-picture {
+      background-image: url("/img/cover-photo-desktop.png");
+      background-repeat: no-repeat;
+      background-position: center;
+      height: 260px;
+      margin-bottom: 2rem; }
+    .desktop .about li {
+      margin-right: 1.5rem; }
+    .desktop .friends li {
+      margin-left: 1.5rem; }
+    .desktop .profile-picture {
+      border-radius: 50%;
+      border: 5px solid white;
+      max-width: 25%;
+      transform: translatey(35%); }
+    .desktop .info-text-block p {
+      padding: 0 4rem;
+      text-align: left; }
+  .mini-quiz {
+    padding: 2rem;
+    margin: 2rem 0; }
+  .identity-scale label {
+    width: 4rem; }
+  .identity-fieldset {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center; } }
 
 /*--------------------Farver----------*/
 .text-primary {
@@ -270,7 +305,7 @@ hr {
 
 /*------------------------Tekst--------------*/
 .title {
-  font-family: "oswald";
+  font-family: "Oswald-VariableFont_wght.ttf", sans-serif;
   font-size: 2rem;
   font-weight: bold;
   text-align: center;
@@ -278,32 +313,33 @@ hr {
   color: #1c494b; }
 
 .header {
-  font-family: "oswald";
+  font-family: "Oswald-VariableFont_wght.ttf", sans-serif;
   font-size: 1.5rem;
-  font-weight: normal;
+  font-weight: 600;
   text-align: center;
   letter-spacing: 0.5px;
   color: #1c494b; }
 
 .header-small {
-  font-family: "oswald";
+  font-family: "Oswald-VariableFont_wght.ttf", sans-serif;
   font-size: 1rem;
-  font-weight: normal;
+  font-weight: 500;
   text-align: center;
   letter-spacing: 0.5px;
-  color: #1c494b; }
+  color: #1c494b;
+  margin-bottom: 1rem; }
 
 .paragraph {
-  font-family: "oswald";
+  font-family: sans-serif;
   font-size: 1rem;
-  font-weight: 300;
+  font-weight: 400;
   text-align: center;
   letter-spacing: 0.5px;
   color: black;
   padding: 0 0.5rem 0 0.5rem; }
 
 .paragraph-left {
-  font-family: "oswald";
+  font-family: sans-serif;
   font-size: 1rem;
   font-weight: 300;
   text-align: left;
@@ -312,7 +348,7 @@ hr {
   padding: 0 0.5rem 0 0.5rem; }
 
 .profile-information {
-  font-family: "oswald";
+  font-family: "Oswald-VariableFont_wght.ttf", sans-serif;
   font-size: 1rem;
   font-weight: 300;
   text-align: left;
@@ -320,7 +356,7 @@ hr {
   color: black; }
 
 .profile-information-header {
-  font-family: "oswald";
+  font-family: "Oswald-VariableFont_wght.ttf", sans-serif;
   font-size: 1rem;
   font-weight: 500;
   text-align: left;
@@ -328,7 +364,7 @@ hr {
   color: black; }
 
 .profile-name {
-  font-family: "oswald";
+  font-family: "Oswald-VariableFont_wght.ttf", sans-serif;
   font-size: 1.5rem;
   font-weight: 400;
   text-align: left;
@@ -338,7 +374,7 @@ hr {
 .list-no-style {
   list-style-type: none; }
   .list-no-style li {
-    font-family: "oswald";
+    font-family: "Oswald-VariableFont_wght.ttf", sans-serif;
     font-size: 1rem;
     font-weight: 300;
     text-align: left;
@@ -348,6 +384,7 @@ hr {
 .bi {
   margin: 0 1rem 0 0; }
 
+/* ----------- Forside ------*/
 /* --------- Venneanmodning side ---------*/
 .post {
   padding: 2rem; }
@@ -381,7 +418,7 @@ hr {
   min-width: 15%; }
 
 .message {
-  font-family: "oswald";
+  font-family: sans-serif;
   font-size: 1rem;
   font-weight: 300;
   text-align: left;
@@ -396,7 +433,7 @@ hr {
   margin-bottom: 2rem; }
 
 .messenger-name {
-  font-family: "oswald";
+  font-family: "Oswald-VariableFont_wght.ttf", sans-serif;
   font-size: 1rem;
   font-weight: 300;
   text-align: left;
@@ -405,13 +442,58 @@ hr {
 
 /*--------Informations side --------*/
 .hidden {
-  display: none; }
+  display: none;
+  opacity: 0; }
+
+.return-header {
+  position: sticky;
+  top: 0;
+  height: 15px;
+  padding: 1.5rem;
+  width: 100%;
+  text-align: right;
+  background-color: rbg(0, 0, 0, 0.4);
+  backdrop-filter: blur(10px); }
+  .return-header a {
+    color: #1c494b;
+    text-decoration: none;
+    font-size: 1.5rem; }
+    .return-header a:hover {
+      color: #cccad0; }
+
+.info-header {
+  margin-bottom: 3rem; }
 
 .mini-quiz {
   background-color: rgba(28, 73, 75, 0.8); }
   .mini-quiz h2,
   .mini-quiz p {
-    color: white; }
+    color: white;
+    margin-bottom: 1rem; }
+
+.percentage-quiz-input {
+  border: 3px solid white;
+  padding: 0.5rem;
+  border-radius: 10px; }
+  .percentage-quiz-input:focus, .percentage-quiz-input:hover {
+    outline: none;
+    border: 3px solid #1c494b; }
+
+.padding-1 {
+  padding: 1rem 0 1rem 0; }
+
+.identity-scale label {
+  display: inline-block;
+  margin: 0.2rem;
+  font-family: "Oswald-VariableFont_wght.ttf", sans-serif;
+  font-size: 1rem;
+  font-weight: 300;
+  text-align: center;
+  letter-spacing: 0.5px;
+  color: white; }
+
+#slider {
+  width: 100%; }
 
 .btn-primary {
   display: block;
@@ -420,7 +502,7 @@ hr {
   height: 60px;
   margin: 0.5rem;
   background-color: #1c494b;
-  font-family: "oswald";
+  font-family: "Oswald-VariableFont_wght.ttf", sans-serif;
   font-size: 1.5rem;
   font-weight: 300;
   text-align: center;
@@ -442,7 +524,7 @@ hr {
   height: 60px;
   margin: 0.5rem;
   background-color: rgba(28, 73, 75, 0.8);
-  font-family: "oswald";
+  font-family: "Oswald-VariableFont_wght.ttf", sans-serif;
   font-size: 1.5rem;
   font-weight: 300;
   text-align: center;
@@ -458,11 +540,13 @@ hr {
     cursor: pointer; }
 
 .btn-accept {
-  width: 150px;
+  border: 5px solid #1c494b;
+  margin-right: 10px;
+  width: auto;
   height: 100%;
   background-color: #1c494b;
-  font-family: "oswald";
-  font-size: 1.5rem;
+  font-family: "Oswald-VariableFont_wght.ttf", sans-serif;
+  font-size: 1.2rem;
   font-weight: 300;
   text-align: center;
   letter-spacing: 0.5px;
@@ -478,11 +562,12 @@ hr {
     cursor: pointer; }
 
 .btn-decline {
+  border: 5px solid #cccad0;
   width: 150px;
   height: 100%;
   background-color: #cccad0;
-  font-family: "oswald";
-  font-size: 1.5rem;
+  font-family: "Oswald-VariableFont_wght.ttf", sans-serif;
+  font-size: 1.2rem;
   font-weight: 300;
   text-align: center;
   letter-spacing: 0.5px;
@@ -503,7 +588,7 @@ hr {
   height: auto;
   margin: 0.5rem;
   background-color: #1c494b;
-  font-family: "oswald";
+  font-family: "Oswald-VariableFont_wght.ttf", sans-serif;
   font-size: 1rem;
   font-weight: 300;
   text-align: center;
@@ -516,7 +601,7 @@ hr {
   border: 3px solid #1c494b; }
   .btn-guess:hover {
     background-color: rgba(28, 73, 75, 0.8);
-    box-shadow: 0px 0px 10px 5px rgba(255, 255, 255, 0.75); }
+    border: 3px solid #cccad0; }
 
 .messenger-link-btn {
   text-decoration: underline;
@@ -529,3 +614,62 @@ hr {
 .block-report-btn {
   border: none;
   background-color: white; }
+
+/* MODAL WINDOW */
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 60rem;
+  background-color: #f3f3f3;
+  padding: 5rem 6rem;
+  box-shadow: 0 4rem 6rem rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  transition: all 0.5s; }
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(125, 125, 125, 0.5);
+  backdrop-filter: blur(4px);
+  z-index: 100;
+  transition: all 0.5s; }
+
+.modal__header {
+  font-size: 3.25rem;
+  margin-bottom: 4.5rem;
+  line-height: 1.5; }
+
+.modal__form {
+  margin: 0 3rem;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  align-items: center;
+  gap: 2.5rem; }
+  .modal__form label {
+    font-size: 1.7rem;
+    font-weight: 500; }
+  .modal__form input {
+    font-size: 1.7rem;
+    padding: 1rem 1.5rem;
+    border: 1px solid #ddd;
+    border-radius: 0.5rem; }
+  .modal__form button {
+    grid-column: 1 / span 2;
+    justify-self: center;
+    margin-top: 1rem; }
+
+.btn--close-modal {
+  font-family: inherit;
+  color: #1c494b;
+  position: absolute;
+  top: 0.5rem;
+  right: 2rem;
+  font-size: 4rem;
+  cursor: pointer;
+  border: none;
+  background: none; }
