@@ -115,8 +115,15 @@ $font-family: "Oswald-VariableFont_wght.ttf", sans-serif;
   border-radius: 10px;
   margin: 0.5rem;
 }
+
+.input-messenger {
+  max-width: 70%;
+  position: fixed;
+  bottom: 2rem;
+  right: 1rem;
+}
 .typing-message {
-  margin-bottom: 2rem;
+  margin-right: 2rem;
 }
 .messenger-name {
   @include text-styles($font-family, 1rem, 300, left, $grey);
@@ -163,16 +170,26 @@ $font-family: "Oswald-VariableFont_wght.ttf", sans-serif;
   }
 }
 
-.percentage-quiz-input {
-  border: 3px solid white;
+@mixin inputfield($border, $borderFocus) {
+  border: $border;
   padding: 0.5rem;
   border-radius: 10px;
 
   &:focus,
   &:hover {
     outline: none;
-    border: 3px solid $primary;
+    border: $borderFocus;
   }
+}
+
+.input-field {
+  @include inputfield(3px solid white, 3px solid $primary);
+}
+
+.modal-input {
+  @include inputfield(3px solid $grey, 3px solid $primary);
+  padding: 0.7rem;
+  text-align: center;
 }
 
 .padding-1 {

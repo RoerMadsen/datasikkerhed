@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="shortcut icon" href="img/HFD-favicon.png" type="image/x-icon" />
-    <script src="script.js" defer></script>
+    <script src="message.js" defer></script>
     <title>Du har modtaget en ny besked!</title>
   </head>
   <body class="mobile desktop">
@@ -29,6 +29,8 @@
       </div>
     </header>
     <main>
+
+
       <section class="grid-messenger">
         <!-- <div class="col-span-1 start-row-1 start-col-1">
           <img
@@ -41,31 +43,31 @@
           <h2 class="messenger-name">Katrine Jensen</h2>
         </div>
         <div class="messages col-span-2 start-col-1">
-          <div class="long-message message">
-            <p>
-              Hej! Jeg er model og vil gerne give dig adgang til mit private
-              album og høre hvad du synes.
-            </p>
-            <p>
-              Du skal bare trykke på linket og så skrive til mig når du har set
-              billederne
-            </p>
-          </div>
-          <button class="messenger-link-btn message">
-            http//:www.synligtFalskLink.org
-          </button>
-        </div>
-        <div class="typing-message message start-row-3 start-col-2">
-          <i class="bi bi-three-dots"></i>
-        </div>
-        <div class="input-messenger message start-col-1 col-span-1 start-row-4">
-          psst... du kan trykke på trekanten til højre, for at anmelde beskeden,
-          eller du kan trykke på linket og se hvad der kan ske.
-        </div>
-        <button class="block-report-btn col-span-1 start-row-4 start-col-2">
-          <i class="bi bi-exclamation-triangle-fill"></i>
-        </button>
       </section>
+
+      <section class="input-messenger flex-inline-row-between">
+        <div class="message typing-message">
+          <p>psst... du kan trykke på trekanten til højre, for at anmelde beskeden,
+            eller du kan trykke på linket og se hvad der kan ske.</p>
+      </div>
+      <button class="block-report-btn">
+        <i class="bi bi-exclamation-triangle-fill"></i>
+      </button>
+    </section>
+      
+    <div id="custom-dialog" class="dialog-overlay">
+      <div class="dialog-box flex-col-center">
+        <h1 class="title">Del 2</h1>
+        <p class="paragraph">
+          Du har accepteret venneanmodning og modtager nu en række beskeder fra den fremmede profil.</p>
+          <p class="paragraph">
+          En af beskederne indeholder et link, du kan nu vælge at trykke på linket, eller at anmelde og blokere brugeren ved at trykke på den grønne advarselstrekant i bunden af siden.
+        </p>
+        <button id="close-dialogue" class="btn-primary">
+          Tak, det er forstået!
+        </button>
+      </div>
+    </div>
     </main>
   </body>
 </html>

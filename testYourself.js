@@ -5,6 +5,16 @@ const overlay = document.querySelector(".overlay");
 const btnCloseModal = document.querySelector(".close-modal");
 const btnsOpenModal = document.querySelectorAll(".show-modal");
 
+document.addEventListener("DOMContentLoaded", function () {
+  const dialog = document.getElementById("custom-dialog");
+  dialog.style.display = "block"; // Vis dialogen når siden indlæses
+
+  const submitButton = document.getElementById("close-dialogue");
+  submitButton.addEventListener("click", function () {
+    dialog.style.display = "none"; // Skjul dialogen efter brugeren har klikket på "Send"
+  });
+});
+
 const openModal = function (e) {
   e.preventDefault();
   modal.classList.remove("hidden");

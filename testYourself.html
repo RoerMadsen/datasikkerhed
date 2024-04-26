@@ -17,28 +17,56 @@
       />
     </header>
     <main>
+      <div id="custom-dialog" class="dialog-overlay">
+        <div class="dialog-box flex-col-center">
+          <h1 class="title">Du er næsten klar til at tage testen...</h1>
+          <p class="header-small">
+            I denne del skal du reagere på en venneanmodning fra en fremmed, på
+            et socialt medie. <br />
+            <br />
+            Du kan vælge at acceptere eller slette anmodningen ved at trykke på
+            knapperne.
+          </p>
+          <button id="close-dialogue" class="btn-primary">
+            Det er forstået!
+          </button>
+        </div>
+      </div>
+
       <article>
+        <!-- pop op ved tryk på "slet" -->
         <div class="modal hidden">
           <button class="close-modal">&times;</button>
-          <h1>I'm a modal window 😍</h1>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum.
+          <p class="header">Fornuftigt!</p>
+          <p class="paragraph">
+            At opdage en falsk profil på sociale medier kan være afgørende for
+            at undgå svindel. Vær opmærksom på profiler med få eller ingen
+            venner, manglende opdateringer og billeder, der virker for polerede
+            eller ideelle.
           </p>
+          <p class="paragraph">
+            Falske profiler mangler ofte personlig information og kan forsøge at
+            kontakte dig med mistænkelig adfærd, såsom anmodninger om personlige
+            oplysninger eller finansielle transaktioner.
+          </p>
+          <section class="flex-col-center">
+            <a class="btn-primary" href="testYourself.html"
+              >Vil du prøve igen?</a
+            >
+            <a class="btn-primary-light" href="infoPage.html"
+              >Læs om datasikkerhed</a
+            >
+          </section>
         </div>
+
         <div class="overlay hidden"></div>
         <section class="desktop-row-sb">
           <h1 class="profile-name">Katrine Jensen</h1>
           <div class="flex-inline-row-between">
-            <button class="btn-accept show-modal">
-              <span> <i class="bi bi-person-plus-fill"></i>Accepter</span>
-            </button>
-            <button class="btn-decline">
+            <a class="btn-accept" href="messagePage.html">
+              <i class="bi bi-person-plus-fill"></i>Accepter
+            </a>
+            <button class="btn-decline show-modal">
               <span> <i class="bi bi-person-dash-fill"></i>Slet</span>
             </button>
           </div>

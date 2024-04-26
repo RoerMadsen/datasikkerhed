@@ -429,8 +429,14 @@ hr {
   border-radius: 10px;
   margin: 0.5rem; }
 
+.input-messenger {
+  max-width: 70%;
+  position: fixed;
+  bottom: 2rem;
+  right: 1rem; }
+
 .typing-message {
-  margin-bottom: 2rem; }
+  margin-right: 2rem; }
 
 .messenger-name {
   font-family: "Oswald-VariableFont_wght.ttf", sans-serif;
@@ -471,11 +477,21 @@ hr {
     color: white;
     margin-bottom: 1rem; }
 
-.percentage-quiz-input {
+.input-field {
   border: 3px solid white;
   padding: 0.5rem;
   border-radius: 10px; }
-  .percentage-quiz-input:focus, .percentage-quiz-input:hover {
+  .input-field:focus, .input-field:hover {
+    outline: none;
+    border: 3px solid #1c494b; }
+
+.modal-input {
+  border: 3px solid #cccad0;
+  padding: 0.5rem;
+  border-radius: 10px;
+  padding: 0.7rem;
+  text-align: center; }
+  .modal-input:focus, .modal-input:hover {
     outline: none;
     border: 3px solid #1c494b; }
 
@@ -616,19 +632,24 @@ hr {
   background-color: white; }
 
 /* MODAL WINDOW */
-.modal {
+.modal,
+.dialog-box {
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   max-width: 60rem;
   background-color: #f3f3f3;
-  padding: 5rem 6rem;
+  padding: 2rem 4rem;
   box-shadow: 0 4rem 6rem rgba(0, 0, 0, 0.3);
   z-index: 1000;
   transition: all 0.5s; }
+  .modal p,
+  .dialog-box p {
+    padding: 1rem; }
 
-.overlay {
+.overlay,
+.dialog-overlay {
   position: fixed;
   top: 0;
   left: 0;
@@ -638,30 +659,6 @@ hr {
   backdrop-filter: blur(4px);
   z-index: 100;
   transition: all 0.5s; }
-
-.modal__header {
-  font-size: 3.25rem;
-  margin-bottom: 4.5rem;
-  line-height: 1.5; }
-
-.modal__form {
-  margin: 0 3rem;
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  align-items: center;
-  gap: 2.5rem; }
-  .modal__form label {
-    font-size: 1.7rem;
-    font-weight: 500; }
-  .modal__form input {
-    font-size: 1.7rem;
-    padding: 1rem 1.5rem;
-    border: 1px solid #ddd;
-    border-radius: 0.5rem; }
-  .modal__form button {
-    grid-column: 1 / span 2;
-    justify-self: center;
-    margin-top: 1rem; }
 
 .btn--close-modal {
   font-family: inherit;
