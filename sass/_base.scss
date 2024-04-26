@@ -110,7 +110,7 @@ $font-family: "Oswald-VariableFont_wght.ttf", sans-serif;
 
 .message {
   @include text-styles(sans-serif, 1rem, 300, left, black);
-  padding: 0.5rem 1rem 0.5rem 1rem;
+  padding: 1rem;
   background-color: $light-grey;
   border-radius: 10px;
   margin: 0.5rem;
