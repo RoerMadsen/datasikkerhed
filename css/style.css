@@ -18,6 +18,9 @@ hr {
 .container {
   padding: 0 1rem 0 1rem; }
 
+.padding-2 {
+  padding: 2rem; }
+
 @font-face {
   font-family: "Oswald";
   src: url("../Oswald-VariableFont_wght.ttf") format("truetype"); }
@@ -432,8 +435,7 @@ hr {
 .input-messenger {
   max-width: 70%;
   position: fixed;
-  bottom: 2rem;
-  right: 1rem; }
+  bottom: 3rem; }
 
 .typing-message {
   margin-right: 2rem; }
@@ -631,7 +633,22 @@ hr {
   border: none;
   background-color: white; }
 
-/* MODAL WINDOW */
+.pw-message-btn {
+  border: none;
+  width: 100%;
+  height: 100px;
+  padding: 1rem;
+  font-family: "Oswald-VariableFont_wght.ttf", sans-serif;
+  font-size: 1.2rem;
+  font-weight: 400;
+  text-align: center;
+  letter-spacing: 0.5px;
+  color: #1c494b; }
+  .pw-message-btn:hover {
+    color: rgba(28, 73, 75, 0.8);
+    cursor: pointer;
+    background-color: white; }
+
 .modal,
 .dialog-box {
   position: fixed;
@@ -639,14 +656,41 @@ hr {
   left: 50%;
   transform: translate(-50%, -50%);
   max-width: 60rem;
-  background-color: #f3f3f3;
   padding: 2rem 4rem;
   box-shadow: 0 4rem 6rem rgba(0, 0, 0, 0.3);
   z-index: 1000;
-  transition: all 0.5s; }
+  transition: all 0.5s;
+  background-color: white; }
   .modal p,
   .dialog-box p {
-    padding: 1rem; }
+    padding: 1.5rem; }
+
+#pw-dialog {
+  display: none; }
+
+.pw-dialog-box {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 60rem;
+  padding: 1rem 0;
+  box-shadow: 0 4rem 6rem rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  transition: all 0.5s;
+  background-color: #ececec;
+  border-radius: 20px; }
+  .pw-dialog-box .header-small {
+    font-weight: 500;
+    font-size: 1.2rem;
+    padding: 2rem; }
+
+.failure-txt {
+  color: #9f1a1a !important; }
+
+.hr-dark {
+  border: 2px solid rgba(125, 125, 125, 0.5);
+  width: 100%; }
 
 .overlay,
 .dialog-overlay {
@@ -655,12 +699,27 @@ hr {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(125, 125, 125, 0.5);
   backdrop-filter: blur(4px);
   z-index: 100;
   transition: all 0.5s; }
 
-.btn--close-modal {
+.dialog-overlay {
+  background-color: rgba(125, 125, 125, 0.5); }
+
+.winOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(4px);
+  z-index: 100;
+  transition: all 0.5s; }
+
+.dialog-overlay.fail-background {
+  background-color: rgba(159, 26, 26, 0.5); }
+
+.btn-close-modal {
   font-family: inherit;
   color: #1c494b;
   position: absolute;

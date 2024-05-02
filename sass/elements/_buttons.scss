@@ -83,3 +83,17 @@
   border: none;
   background-color: white;
 }
+
+.pw-message-btn {
+  border: none;
+  width: 100%;
+  height: 100px;
+  padding: 1rem;
+  @include text-styles($font-family, 1.2rem, 400, center, $primary);
+
+  &:hover {
+    color: $primary-transparent;
+    cursor: pointer;
+    background-color: white;
+  }
+}

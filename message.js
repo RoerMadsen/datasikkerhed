@@ -1,58 +1,74 @@
-"use strict";
+document.addEventListener("DOMContentLoaded", function () {
+  const infoDialog = document.getElementById("info-dialog");
+  const pwDialog = document.getElementById("pw-dialog");
 
-// document.addEventListener("DOMContentLoaded", function () {
-//   // Åbn dialogboksen, når siden er indlæst
-//   openDialog();
+  // Open info dialog when the page loads
+  infoDialog.style.display = "block";
 
-//   // Lyt efter klik på lukknappen
-//   const submitButton = document.getElementById("close-dialogue");
-//   submitButton.addEventListener("click", function () {
-//     // Skjul dialogen efter brugeren har klikket på "Luk"
-//     const dialog = document.getElementById("custom-dialog");
-//     dialog.style.display = "none";
+  // Close info dialog when close button is clicked
+  document
+    .getElementById("close-info-dialogue")
+    .addEventListener("click", function () {
+      infoDialog.style.display = "none";
+      startDelayedMessages();
+    });
 
-//     // Start funktionen med forsinkede beskeder efter dialogboksen er lukket
-//     startDelayedMessages();
-//   });
+  // Function to start delayed messages
+  function startDelayedMessages() {
+    const messagesContainer = document.querySelector(".messages");
+    const messageTexts = [
+      "Hej! Jeg er model og vil gerne give dig adgang til mit private billeder.",
+      "Du skal bare trykke på det link jeg har sendt til dig",
+      "Jeg bliver SÅ glad hvis du vil se mine billeder!!",
+    ];
 
-//   // Funktion til at åbne dialogboksen
-//   function openDialog() {
-//     const dialog = document.getElementById("custom-dialog");
-//     dialog.style.display = "block";
-//   }
+    function addMessageWithDelay(messageText, delay) {
+      const messageElement = document.createElement("div");
+      messageElement.classList.add("message");
+      messageElement.innerText = messageText;
 
-//   // Funktion til at starte forsinkede beskeder
-//   function startDelayedMessages() {
-//     // Find det element, hvor du vil vise beskederne
-//     const messagesContainer = document.querySelector(".messages");
+      setTimeout(function () {
+        messagesContainer.appendChild(messageElement);
+        messagesContainer.scrollTop = messagesContainer.scrollHeight;
+      }, delay);
+    }
 
-//     // Array med beskedtekster
-//     const messageTexts = [
-//       "Hej! Jeg er model og vil gerne give dig adgang til mit private billeder.",
-//       "Du skal bare trykke på  det link jeg har sendt til dig",
-//       "Jeg bliver SÅ glad hvis du vil se mine billeder!!",
-//     ];
+    messageTexts.forEach(function (text, index) {
+      addMessageWithDelay(text, (index + 1) * 1000);
+    });
+  }
 
-//     // Definer en funktion til at tilføje en besked til DOM'en med en lille forsinkelse
-//     function addMessageWithDelay(messageText, delay) {
-//       // Opret et nyt besked-element
-//       const messageElement = document.createElement("div");
-//       messageElement.classList.add("message");
-//       messageElement.innerText = messageText;
+  // Open pw dialog when link button is clicked
+  document
+    .getElementById("link-message")
+    .addEventListener("click", function () {
+      pwDialog.style.display = "block";
+      document.getElementById("change-password").style.display = "block";
+      document.getElementById("create-new-password").style.display = "none";
+      document.getElementById("data-leaked").style.display = "none";
+    });
 
-//       // Tilføj det nye besked-element til beskedcontaineren med en lille forsinkelse
-//       setTimeout(function () {
-//         messagesContainer.appendChild(messageElement);
-//         // Scroll ned til bunden af beskedcontaineren
-//         messagesContainer.scrollTop = messagesContainer.scrollHeight;
-//       }, delay);
-//     }
+  // Switch pw dialog content when change password button is clicked
+  document
+    .getElementById("change-pw-btn")
+    .addEventListener("click", function () {
+      document.getElementById("change-password").style.display = "none";
+      document.getElementById("create-new-password").style.display = "block";
+    });
 
-//     // Iterer gennem arrayet med beskedtekster og tilføj hver besked med forsinkelse
-//     messageTexts.forEach(function (text, index) {
-//       addMessageWithDelay(text, (index + 1) * 1000); // Juster forsinkelsen efter behov
-//     });
-//   }
-// });
+  // Switch pw dialog content to data leaked when decline button is clicked
+  document
+    .getElementById("decline-pw-btn")
+    .addEventListener("click", function () {
+      document.getElementById("change-password").innerHTML =
+        document.getElementById("data-leaked").innerHTML;
+      pwDialog.classList.add("fail-background");
+    });
 
-/////////////////////////////////////// Når man har trykket på linket
+  // Close pw dialog when clicking outside of the dialog
+  window.addEventListener("click", function (event) {
+    if (event.target === pwDialog) {
+      pwDialog.style.display = "none";
+    }
+  });
+});

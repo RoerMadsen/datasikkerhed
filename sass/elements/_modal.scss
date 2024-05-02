@@ -1,62 +1,78 @@
-/* MODAL WINDOW */
-.modal,
-.dialog-box {
+@mixin modal($background, $padding) {
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   max-width: 60rem;
-  background-color: #f3f3f3;
-  padding: 2rem 4rem;
+  padding: $padding;
   box-shadow: 0 4rem 6rem rgba(0, 0, 0, 0.3);
   z-index: 1000;
   transition: all 0.5s;
+  background-color: $background;
+}
+
+.modal,
+.dialog-box {
+  @include modal(white, 2rem 4rem);
 
   p {
-    padding: 1rem;
+    padding: 1.5rem;
   }
 }
 
-.overlay,
-.dialog-overlay {
+#pw-dialog {
+  display: none;
+}
+
+.pw-dialog-box {
+  @include modal($light-grey, 1rem 0);
+  border-radius: 20px;
+
+  .header-small {
+    font-weight: 500;
+    font-size: 1.2rem;
+    padding: 2rem;
+  }
+}
+
+.failure-txt {
+  color: $fail !important;
+}
+
+.hr-dark {
+  border: 2px solid $grey-transparent;
+  width: 100%;
+}
+
+@mixin overlay($background) {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: $grey-transparent;
   backdrop-filter: blur(4px);
   z-index: 100;
   transition: all 0.5s;
 }
 
-// .modal__form {
-//   margin: 0 3rem;
-//   display: grid;
-//   grid-template-columns: 1fr 2fr;
-//   align-items: center;
-//   gap: 2.5rem;
+.overlay,
+.dialog-overlay {
+  @include overlay($grey-transparent);
+}
 
-//   label {
-//     font-size: 1.7rem;
-//     font-weight: 500;
-//   }
+.dialog-overlay {
+  background-color: $grey-transparent; // Standard baggrundsfarve for overlay
+}
 
-//   input {
-//     font-size: 1.7rem;
-//     padding: 1rem 1.5rem;
-//     border: 1px solid #ddd;
-//     border-radius: 0.5rem;
-//   }
+.winOverlay {
+  @include overlay($sucess-transparent);
+}
 
-//   button {
-//     grid-column: 1 / span 2;
-//     justify-self: center;
-//     margin-top: 1rem;
-//   }
-// }
+.dialog-overlay.fail-background {
+  background-color: $fail-transparent; // Baggrundsfarve for fail-state
+}
 
-.btn--close-modal {
+.btn-close-modal {
   font-family: inherit;
   color: $primary;
   position: absolute;

@@ -1,12 +1,13 @@
 $primary: #1c494b;
 $primary-transparent: rgba(28, 73, 75, 0.8);
 $sucess: #164400;
-$sucess-transparent: rgba(22, 68, 0, 0.5);
+$sucess-transparent: rgba(22, 68, 0, 0.6);
 $fail: #9f1a1a;
 $fail-transparent: rgba(159, 26, 26, 0.5);
 $light-grey: #ececec;
 $grey: #cccad0;
 $grey-transparent: rgba(125, 125, 125, 0.5);
+$dark-grey: #969292;
 
 $breakpoints: (
   "sm": (
@@ -40,6 +41,10 @@ hr {
 
 .container {
   padding: 0 1rem 0 1rem;
+}
+
+.padding-2 {
+  padding: 2rem;
 }
 
 @import "fonts";

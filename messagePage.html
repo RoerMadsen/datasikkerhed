@@ -29,8 +29,6 @@
       </div>
     </header>
     <main>
-
-
       <section class="grid-messenger">
         <!-- <div class="col-span-1 start-row-1 start-col-1">
           <img
@@ -48,29 +46,83 @@
           </button>
         </div>
 
-      <section class="input-messenger flex-inline-row-between">
-        <div class="message typing-message">
-          <p>psst... du kan trykke på trekanten til højre, for at anmelde beskeden,
-            eller du kan trykke på linket og se hvad der kan ske.</p>
-      </div>
-      <button class="block-report-btn">
-        <i class="bi bi-exclamation-triangle-fill"></i>
-      </button>
-    </section>
-      
-    <!-- <div id="custom-dialog" class="dialog-overlay">
+        <section class="input-messenger flex-inline-row-between start-col-1">
+          <div class="message typing-message">
+            <p>
+              psst... du kan trykke på trekanten til højre, for at anmelde
+              beskeden, eller du kan trykke på linket og se hvad der kan ske.
+            </p>
+          </div>
+          <button class="block-report-btn">
+            <i class="bi bi-exclamation-triangle-fill"></i>
+          </button>
+        </section>
+      </section>
+
+      <div id="info-dialog" class="dialog-overlay">
       <div class="dialog-box flex-col-center">
         <h1 class="title">Del 2</h1>
         <p class="paragraph">
           Du har accepteret venneanmodning og modtager nu en række beskeder fra den fremmede profil.</p>
           <p class="paragraph">
-          En af beskederne indeholder et link, du kan nu vælge at trykke på linket, eller at anmelde og blokere brugeren ved at trykke på den grønne advarselstrekant i bunden af siden.
+          En af beskederne indeholder et link, du kan nu vælge at trykke på linket, eller at anmelde og blokere brugeren ved at trykke på den grønne advarsels-trekant i bunden af siden.
         </p>
-        <button id="close-dialogue" class="btn-primary">
+        <button id="close-info-dialogue" class="btn-primary">
           Tak, det er forstået!
         </button>
       </div>
-    </div> -->
+      </div>
+
+
+      <div id="pw-dialog" class="dialog-overlay">
+        
+        <div class="pw-dialog-box flex-col-center">
+          
+          <div id="change-password" class="flex-col-center">
+            <p class="header-small">
+              Dit password er dukket op i et datalæk, hvilket giver risiko for
+              at dine oplysninger bliver komprimeret. Du bør ændre dit password
+              med det samme.
+            </p>
+            <hr class="hr-dark" />
+            <button id="change-pw-btn" class="pw-message-btn">
+              Skift password nu
+            </button>
+            <button id="decline-pw-btn" class="pw-message-btn">Ikke nu</button>
+          </div>
+        </div>
+
+        <div
+          id="create-new-password"
+          class="flex-col-center pw-dialog-box padding-2 dialog-overlay"
+        >
+          <p class="paragraph">Lav nyt password</p>
+        </div>
+        <div
+          id="data-leaked"
+          class="flex-col-center pw-dialog-box failure-bg"
+        >
+          <h2 class="header failure-txt">UPS!</h2>
+          <h3 class="header-small failure-txt">
+            Det er vigtigt at reagere, hvis dit password er kompromitteret.
+          </h3>
+          <p class="paragraph">
+            Når dit password er lækket, udsættes dine online konti og personlige
+            oplysninger for alvorlig risiko. Uautoriserede personer kan få
+            adgang til dine data, hvilket kan føre til identitetstyveri,
+            økonomisk tab og misbrug af dine konti. Det er afgørende at handle
+            hurtigt for at sikre dine konti og minimere potentielle skader
+          </p>
+          <section class="flex-col-center padding-2">
+            <a class="btn-primary" href="testYourself.html"
+              >Vil du prøve igen?</a
+            >
+            <a class="btn-primary-light" href="infoPage.html"
+              >Læs om datasikkerhed</a
+            >
+          </section>
+        </div>
+      
     </main>
   </body>
 </html>
