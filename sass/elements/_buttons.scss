@@ -97,3 +97,11 @@
     background-color: white;
   }
 }
+
+.show-password {
+  border: none;
+  font-size: 2rem;
+  color: $primary;
+  background-color: $light-grey;
+  cursor: pointer;
+}

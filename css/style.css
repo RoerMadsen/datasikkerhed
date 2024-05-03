@@ -649,6 +649,13 @@ hr {
     cursor: pointer;
     background-color: white; }
 
+.show-password {
+  border: none;
+  font-size: 2rem;
+  color: #1c494b;
+  background-color: #ececec;
+  cursor: pointer; }
+
 .modal,
 .dialog-box {
   position: fixed;
@@ -668,6 +675,12 @@ hr {
 #pw-dialog {
   display: none; }
 
+#test-completed {
+  display: none; }
+  #test-completed .btn-primary,
+  #test-completed .btn-primary-light {
+    width: 400px; }
+
 .pw-dialog-box {
   position: fixed;
   top: 50%;
@@ -684,6 +697,19 @@ hr {
     font-weight: 500;
     font-size: 1.2rem;
     padding: 2rem; }
+  .pw-dialog-box .paragraph {
+    padding: 1rem 2rem; }
+  .pw-dialog-box .header {
+    margin: 1rem 0.5rem; }
+  .pw-dialog-box .input-field {
+    border: 1px solid rgba(28, 73, 75, 0.8);
+    margin: 1rem;
+    width: 270px;
+    height: 30px; }
+    .pw-dialog-box .input-field:hover {
+      border: 2px solid #1c494b; }
+  .pw-dialog-box .dialogue-wide {
+    width: 600px; }
 
 .failure-txt {
   color: #9f1a1a !important; }

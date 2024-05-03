@@ -24,6 +24,14 @@
   display: none;
 }
 
+#test-completed {
+  display: none;
+
+  .btn-primary,
+  .btn-primary-light {
+    width: 400px;
+  }
+}
 .pw-dialog-box {
   @include modal($light-grey, 1rem 0);
   border-radius: 20px;
@@ -32,6 +40,27 @@
     font-weight: 500;
     font-size: 1.2rem;
     padding: 2rem;
+  }
+  .paragraph {
+    padding: 1rem 2rem;
+  }
+
+  .header {
+    margin: 1rem 0.5rem;
+  }
+  .input-field {
+    border: 1px solid $primary-transparent;
+    margin: 1rem;
+    width: 270px;
+    height: 30px;
+
+    &:hover {
+      border: 2px solid $primary;
+    }
+  }
+
+  .dialogue-wide {
+    width: 600px;
   }
 }
 

@@ -73,32 +73,57 @@
       </div>
       </div>
 
-
       <div id="pw-dialog" class="dialog-overlay">
-        
         <div class="pw-dialog-box flex-col-center">
-          
           <div id="change-password" class="flex-col-center">
             <p class="header-small">
               Dit password er dukket op i et datalæk, hvilket giver risiko for
               at dine oplysninger bliver komprimeret. Du bør ændre dit password
               med det samme.
             </p>
-            <hr class="hr-dark" />
-            <button id="change-pw-btn" class="pw-message-btn">
+            <div class="flex-col-center">
+              <button id="change-pw-btn" class="btn-primary">
               Skift password nu
             </button>
-            <button id="decline-pw-btn" class="pw-message-btn">Ikke nu</button>
+            <button id="decline-pw-btn" class="btn-primary-light">Ikke nu</button>
+            </div>
+            
           </div>
         </div>
 
-        <div
-          id="create-new-password"
-          class="flex-col-center pw-dialog-box padding-2 dialog-overlay"
-        >
-          <p class="paragraph">Lav nyt password</p>
-        </div>
-        <div
+          <div id="create-new-password" class="dialog-overlay">
+            <div class="flex-col-center pw-dialog-box dialogue-wide">
+              <p class="header">Opret et stærkt password.</p>
+              <p class="paragraph">
+                Et stærkt password er svært at gætte eller hacke. Vi anbefaler
+                at det er over 8 tegn og indeholder en blanding af store og små
+                bogstaver, tal og specialtegn.
+              </p>
+              <p class="paragraph">
+                Prøv dig frem med forskellige variationer og tryk på "tjek
+                styrke". Når du er færdig kan du trykke på "gem og afslut test"
+              </p>
+              <div class="flex-row-center">
+                <input
+                  type="password"
+                  class="pw-input input-field"
+                  placeholder="Skriv et password her..."
+                />
+                <button class="show-password">
+                  <i class="bi bi-eye eye-icon"></i>
+                </button>
+              </div>
+              <p class="pw-message header-small">Prøv dig frem!</p>
+              <button type="submit" class="pw-submit btn-primary">
+                Tjek styrke
+              </button>
+              <button class="save-quit btn-primary-light">
+                Gem og afslut test
+              </button>
+            </div>
+          </div>
+
+      <div
           id="data-leaked"
           class="flex-col-center pw-dialog-box failure-bg"
         >
@@ -122,7 +147,20 @@
             >
           </section>
         </div>
-      
+
+      <div id="test-completed" class="dialog-overlay">
+        <div class="modal">
+          <p class="header">Du har gennemført testen!</p>
+          <section class="flex-col-center">
+            <a class="btn-primary" href="testYourself.html"
+              >Vil du prøve igen?</a
+            >
+            <a class="btn-primary-light" href="infoPage.html"
+              >Eller Læse om datasikkerhed?</a
+            >
+          </section>
+        </div>
+      </div>
     </main>
   </body>
 </html>
