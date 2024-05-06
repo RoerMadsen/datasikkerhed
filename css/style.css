@@ -37,6 +37,12 @@ hr {
   align-items: center;
   justify-content: center; }
 
+.flex-row-sb {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between; }
+
 .flex-col-reverse {
   display: flex;
   flex-direction: column-reverse;
@@ -204,7 +210,8 @@ hr {
       background-image: url("/img/arrow-down-sm.png");
       background-position: center;
       background-color: white;
-      border: none; }
+      border: none;
+      transition: background-image 0.3s ease; }
     .mobile .info-header {
       margin-bottom: 2rem; }
       .mobile .info-header p,
@@ -214,8 +221,9 @@ hr {
       margin-bottom: 2rem; }
       .mobile .info-text-block h3 {
         margin-bottom: 1rem; }
-      .mobile .info-text-block p {
-        text-align: left; }
+      .mobile .info-text-block .paragraph {
+        text-align: left;
+        padding: 0.5rem; }
   .mini-quiz {
     padding: 1rem; }
   .percentage-fieldset {
@@ -321,7 +329,8 @@ hr {
   font-weight: bold;
   text-align: center;
   letter-spacing: 0.5px;
-  color: #1c494b; }
+  color: #1c494b;
+  padding: 1.5rem 0; }
 
 .header {
   font-family: "Oswald-VariableFont_wght.ttf", sans-serif;
@@ -347,7 +356,7 @@ hr {
   text-align: center;
   letter-spacing: 0.5px;
   color: black;
-  padding: 0 0.5rem 0 0.5rem; }
+  padding: 0.5rem; }
 
 .paragraph-left {
   font-family: sans-serif;
@@ -396,6 +405,9 @@ hr {
   margin: 0 1rem 0 0; }
 
 /* ----------- Forside ------*/
+.logo {
+  margin: 2rem 0; }
+
 /* --------- Venneanmodning side ---------*/
 .post {
   padding: 2rem; }
@@ -456,6 +468,11 @@ hr {
   display: none;
   opacity: 0; }
 
+@media (max-width: 330px) {
+  .mobile-hidden {
+    display: none;
+    opacity: 0; } }
+
 .return-header {
   position: sticky;
   top: 0;
@@ -476,7 +493,8 @@ hr {
   margin-bottom: 3rem; }
 
 .mini-quiz {
-  background-color: rgba(28, 73, 75, 0.8); }
+  background-color: rgba(28, 73, 75, 0.8);
+  margin-bottom: 2rem; }
   .mini-quiz h2,
   .mini-quiz p {
     color: white;
@@ -786,7 +804,12 @@ hr {
 
 @media (max-width: 330px) {
   .dialog-content {
-    padding: 6rem 1rem 2rem 1rem; } }
+    padding: 6rem 1rem 2rem 1rem; }
+  #test-completed {
+    max-width: 100%; }
+    #test-completed .btn-primary,
+    #test-completed .btn-primary-light {
+      max-width: 300px; } }
 
 @media (min-width: 331px) {
   .input-field {

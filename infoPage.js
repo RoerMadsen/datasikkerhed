@@ -64,3 +64,32 @@ document
       displayIdentityMessage("Dit gæt er lidt for lavt, prøv et lavere tal.");
     }
   });
+
+/////////////////// Folder tekstafsnit ind/ud
+function toggleElementVisibility(buttonId, elementId) {
+  // Find knappen og det tilhørende element
+  const button = document.getElementById(buttonId);
+  const element = document.getElementById(elementId);
+
+  // Tilføj en klikhændelse til knappen
+  button.addEventListener("click", function () {
+    // Skift synligheden af elementet ved at tilføje eller fjerne klassen 'hidden'
+    element.classList.toggle("mobile-hidden");
+
+    // Skift baggrundsbilledet for knappen baseret på synligheden af elementet
+    if (element.classList.contains("mobile-hidden")) {
+      button.style.backgroundImage = 'url("/img/arrow-down-sm.png")';
+    } else {
+      button.style.backgroundImage = 'url("/img/arrow-up-sm.png")';
+    }
+  });
+}
+
+// Brug funktionen til at knytte klikhændelser for specifikke knapper og elementer
+toggleElementVisibility("btn-passwordbeskyttelse", "passwordbeskyttelse");
+toggleElementVisibility("btn-scamPhishing", "scamPhishing");
+toggleElementVisibility("btn-identitetssvindel", "identitetssvindel");
+toggleElementVisibility("btn-kompromiteredeKonti", "kompromiteredeKonti");
+toggleElementVisibility("btn-finansielSvindel", "finansielSvindel");
+toggleElementVisibility("btn-reputationsskade", "reputationsskade");
+toggleElementVisibility("btn-juridiskeProblemer", "reputationsskade");

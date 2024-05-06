@@ -2,7 +2,7 @@
 $colors: (
   "primary": $primary,
   "sucess": $sucess,
-  "fail": $fail,
+  "fail": $fail
 );
 
 @each $key, $val in $colors {
@@ -28,6 +28,7 @@ $font-family: "Oswald-VariableFont_wght.ttf", sans-serif;
 
 .title {
   @include text-styles($font-family, 2rem, bold, center, $primary);
+  padding: 1.5rem 0;
 }
 
 .header {
@@ -40,7 +41,7 @@ $font-family: "Oswald-VariableFont_wght.ttf", sans-serif;
 
 .paragraph {
   @include text-styles(sans-serif, 1rem, 400, center, black);
-  padding: 0 0.5rem 0 0.5rem;
+  padding: 0.5rem;
 }
 .paragraph-left {
   @include text-styles(sans-serif, 1rem, 300, left, black);
@@ -70,7 +71,9 @@ $font-family: "Oswald-VariableFont_wght.ttf", sans-serif;
 }
 
 /* ----------- Forside ------*/
-
+.logo {
+  margin: 2rem 0;
+}
 /* --------- Venneanmodning side ---------*/
 .post {
   padding: 2rem;
@@ -129,6 +132,13 @@ $font-family: "Oswald-VariableFont_wght.ttf", sans-serif;
   opacity: 0;
 }
 
+@media (max-width: 330px) {
+  .mobile-hidden {
+    display: none;
+    opacity: 0;
+  }
+}
+
 .return-header {
   position: sticky;
   top: 0;
@@ -162,6 +172,8 @@ $font-family: "Oswald-VariableFont_wght.ttf", sans-serif;
     color: white;
     margin-bottom: 1rem;
   }
+
+  margin-bottom: 2rem;
 }
 
 @mixin inputfield($border, $borderFocus) {

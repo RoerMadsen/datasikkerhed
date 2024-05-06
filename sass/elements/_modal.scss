@@ -143,6 +143,15 @@
   .dialog-content {
     padding: 6rem 1rem 2rem 1rem;
   }
+
+  #test-completed {
+    max-width: 100%;
+
+    .btn-primary,
+    .btn-primary-light {
+      max-width: 300px;
+    }
+  }
 }
 
 @media (min-width: 331px) {

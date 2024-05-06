@@ -12,6 +12,9 @@
 .flex-col-center {
   @include responsive-flex(flex, column, center, center);
 }
+.flex-row-sb {
+  @include responsive-flex(flex, row, center, space-between);
+}
 .flex-col-reverse {
   @include responsive-flex(flex, column-reverse, center, center);
 }
@@ -103,6 +106,7 @@
       background-position: center;
       background-color: white;
       border: none;
+      transition: background-image 0.3s ease;
     }
 
     .info-header {
@@ -120,8 +124,9 @@
         margin-bottom: 1rem;
       }
 
-      p {
+      .paragraph {
         text-align: left;
+        padding: 0.5rem;
       }
     }
   }
