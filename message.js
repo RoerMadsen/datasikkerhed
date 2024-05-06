@@ -153,20 +153,12 @@ document
   });
 
 /////////////// luk dialogboks knapper
-document
-  .querySelector(".close-report-modal")
-  .addEventListener("click", function () {
-    document.querySelector("#blocked-reported").style.display = "none";
+function addCloseModalListeners(modalClass, modalId) {
+  document.querySelector(modalClass).addEventListener("click", function () {
+    document.querySelector(modalId).style.display = "none";
   });
+}
 
-document
-  .querySelector(".close-test-completed-modal")
-  .addEventListener("click", function () {
-    document.querySelector("#test-completed").style.display = "none";
-  });
-
-document
-  .querySelector(".close-pw-modal")
-  .addEventListener("click", function () {
-    document.querySelector("#pw").style.display = "none";
-  });
+addCloseModalListeners(".close-blocked-reported-modal", "#blocked-reported");
+addCloseModalListeners(".close-test-completed-modal", "#test-completed");
+addCloseModalListeners(".close-pw-modal", "#pw");

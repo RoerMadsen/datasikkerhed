@@ -74,50 +74,49 @@
 
       <!--Dialogboks der åbnes når man trykker på det falske link-->
       <div id="pw" class="dialog-overlay">
-        <div class="pw-dialog-box flex-col-center">
-          <button class="close-change-pw-modal close-btn">&times;</button>
-          <!--Første "side" i dialogboksen-->
-          <div id="change-password" class="flex-col-center">
-            <p class="header-small">
-              Dit password er dukket op i et datalæk, hvilket giver risiko for
-              at dine oplysninger bliver komprimeret. Du bør ændre dit password
-              med det samme.
-            </p>
-            <div class="flex-col-center">
-              <button id="change-pw-btn" class="btn-primary">
-                Skift password nu
-              </button>
-              <button id="decline-pw-btn" class="btn-primary-light">
-                Ikke nu
-              </button>
-            </div>
+        <!--Første "side" i dialogboksen-->
+        <div id="change-password" class="dialog-content">
+          <button class="close-pw-modal close-btn">&times;</button>
+          <p class="header-small">
+            Dit password er dukket op i et datalæk, hvilket giver risiko for at
+            dine oplysninger bliver komprimeret. Du bør ændre dit password med
+            det samme.
+          </p>
+          <div class="flex-col-center">
+            <button id="change-pw-btn" class="btn-primary">
+              Skift password nu
+            </button>
+            <button id="decline-pw-btn" class="btn-primary-light">
+              Ikke nu
+            </button>
           </div>
         </div>
 
         <!-- indholdet der vises i dialogboksen hvis man vælger "skift password nu"-->
-        <div id="new-pw" class="dialog-overlay">
-          <div class="flex-col-center pw-dialog-box dialogue-wide">
-            <p class="header">Opret et stærkt password.</p>
-            <p class="paragraph">
-              Et stærkt password er svært at gætte eller hacke. Vi anbefaler at
-              det er over 8 tegn og indeholder en blanding af store og små
-              bogstaver, tal og specialtegn.
-            </p>
-            <p class="paragraph">
-              Prøv dig frem med forskellige variationer og tryk på "tjek
-              styrke". Når du er færdig kan du trykke på "gem og afslut test"
-            </p>
-            <div class="flex-row-center">
-              <input
-                type="password"
-                class="pw-input input-field"
-                placeholder="Skriv et password her..."
-              />
-              <button class="show-password">
-                <i class="bi bi-eye eye-icon"></i>
-              </button>
-            </div>
-            <p class="pw-message header-small">Prøv dig frem!</p>
+        <div id="new-pw" class="dialog-content">
+          <button class="close-pw-modal close-btn">&times;</button>
+          <p class="header">Opret et stærkt password.</p>
+          <p class="paragraph">
+            Et stærkt password er svært at gætte eller hacke. Vi anbefaler at
+            det er over 8 tegn og indeholder en blanding af store og små
+            bogstaver, tal og specialtegn.
+          </p>
+          <p class="paragraph">
+            Prøv dig frem med forskellige variationer og tryk på "tjek styrke".
+            Når du er færdig kan du trykke på "gem og afslut test"
+          </p>
+          <div class="flex-row-center">
+            <input
+              type="password"
+              class="pw-input input-field"
+              placeholder="Skriv et password her..."
+            />
+            <button class="show-password">
+              <i class="bi bi-eye eye-icon"></i>
+            </button>
+          </div>
+          <p class="pw-message header-small">Prøv dig frem!</p>
+          <div class="flex-col-center">
             <button type="submit" class="pw-submit btn-primary">
               Tjek styrke
             </button>
@@ -126,8 +125,9 @@
             </button>
           </div>
         </div>
+
         <!--Indholdet der vises hvis man trykker på "ikke nu"-->
-        <div id="data-leaked" class="flex-col-center pw-dialog-box failure-bg">
+        <div id="data-leaked" class="dialog-content failure-bg">
           <h2 class="header failure-txt">UPS!</h2>
           <h3 class="header-small failure-txt">
             Det er vigtigt at reagere, hvis dit password er kompromitteret.
@@ -160,7 +160,7 @@
               >Vil du prøve igen?</a
             >
             <a class="btn-primary-light" href="infoPage.html"
-              >Eller Læse om datasikkerhed?</a
+              >Læs om datasikkerhed</a
             >
           </section>
         </div>
@@ -194,7 +194,7 @@
               >Vil du prøve igen?</a
             >
             <a class="btn-primary-light" href="infoPage.html"
-              >Eller Læse om datasikkerhed?</a
+              >Læs om datasikkerhed</a
             >
           </section>
         </div>

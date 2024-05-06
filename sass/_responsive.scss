@@ -137,7 +137,7 @@
       max-width: 50%;
     }
   }
-  /////////////// Test startside
+  // ----------Test startside
   .cover-picture {
     background-image: url("/img/cover-pigture-mobile.png");
     background-repeat: no-repeat;
@@ -148,6 +148,12 @@
 
   .profile-picture {
     @include img-round(5px solid white, 50%, translatey(20%));
+  }
+  //-----------Messenger side
+  .input-messenger {
+    max-width: 90%;
+    position: fixed;
+    bottom: 1rem;
   }
 }
 
@@ -218,5 +224,12 @@
 
   .identity-fieldset {
     @include responsive-flex(flex, row, center, center);
+  }
+
+  //-----------Messenger side
+  .input-messenger {
+    max-width: 70%;
+    position: fixed;
+    bottom: 3rem;
   }
 }

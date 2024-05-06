@@ -15,8 +15,25 @@
 .dialog-box {
   @include modal(white, 2rem 4rem);
 
-  p {
-    padding: 1.5rem;
+  @media (min-width: 331px) {
+    .header {
+      margin: 1rem 0.5rem;
+    }
+    .dialogue-wide {
+      width: 600px;
+    }
+    p {
+      padding: 1.5rem;
+    }
+  }
+
+  @media (max-width: 330px) {
+    .header {
+      margin: 2rem 0.5rem 0rem 0.5rem;
+    }
+    p {
+      padding: 1rem;
+    }
   }
 }
 
@@ -36,9 +53,12 @@
   display: none;
 }
 
-.pw-dialog-box {
+.dialog-content {
   @include modal($light-grey, 1rem 0);
   border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 
   .header-small {
     font-weight: 500;
@@ -49,22 +69,13 @@
     padding: 1rem 2rem;
   }
 
-  .header {
-    margin: 1rem 0.5rem;
-  }
   .input-field {
     border: 1px solid $primary-transparent;
     margin: 1rem;
-    width: 270px;
-    height: 30px;
 
     &:hover {
       border: 2px solid $primary;
     }
-  }
-
-  .dialogue-wide {
-    width: 600px;
   }
 }
 
@@ -109,11 +120,34 @@
 .close-btn {
   font-family: inherit;
   color: $primary;
-  position: absolute;
-  top: 0.5rem;
-  right: 2rem;
   font-size: 4rem;
   cursor: pointer;
   border: none;
   background: none;
+
+  @media (min-width: 331px) {
+    position: inherit;
+    top: 0.5rem;
+    right: 2rem;
+  }
+
+  @media (max-width: 330px) {
+    position: absolute;
+    top: 0.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 330px) {
+  .dialog-content {
+    padding: 6rem 1rem 2rem 1rem;
+  }
+}
+
+@media (min-width: 331px) {
+  .input-field {
+    width: 270px;
+    height: 30px;
+  }
 }
