@@ -78,6 +78,8 @@
 /*----------------------------------------mobil Version-----------------------------*/
 @media (max-width: 330px) {
   .mobile {
+   
+
     @include responsive-flex(flex, column, center, null);
     max-width: 100%;
 
@@ -148,8 +150,13 @@
     background-repeat: no-repeat;
     background-position: center;
     height: 150px;
-    margin-bottom: 3rem;
+    margin-bottom: 4rem;
   }
+
+  .profile-name{
+    padding-bottom: 1rem;
+  }
+
 
   .profile-picture {
     @include img-round(5px solid white, 50%, translatey(20%));
@@ -165,7 +172,7 @@
 /*----------------------------------------Desktop Version---------------------------*/
 @media (min-width: 331px) {
   .desktop {
-    @include responsive-grid(grid, 3, null);
+    @include responsive-grid(grid, 3 repeat(1fr), null);
     max-width: 877px;
     margin: 0 auto;
 
@@ -194,8 +201,7 @@
       background-image: url("/img/cover-photo-desktop.png");
       background-repeat: no-repeat;
       background-position: center;
-      height: 260px;
-      margin-bottom: 2rem;
+      height: 150px;
     }
 
     .about li {

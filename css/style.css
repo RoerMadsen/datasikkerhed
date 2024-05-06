@@ -238,7 +238,9 @@ hr {
     background-repeat: no-repeat;
     background-position: center;
     height: 150px;
-    margin-bottom: 3rem; }
+    margin-bottom: 4rem; }
+  .profile-name {
+    padding-bottom: 1rem; }
   .profile-picture {
     border-radius: 50%;
     border: 5px solid white;
@@ -253,7 +255,7 @@ hr {
 @media (min-width: 331px) {
   .desktop {
     display: grid;
-    grid-template-columns: 3;
+    grid-template-columns: 3 repeat(1fr);
     max-width: 877px;
     margin: 0 auto; }
     .desktop .desktop-row-sb {
@@ -274,8 +276,7 @@ hr {
       background-image: url("/img/cover-photo-desktop.png");
       background-repeat: no-repeat;
       background-position: center;
-      height: 260px;
-      margin-bottom: 2rem; }
+      height: 150px; }
     .desktop .about li {
       margin-right: 1.5rem; }
     .desktop .friends li {
@@ -480,7 +481,6 @@ hr {
   padding: 1.5rem;
   width: 100%;
   text-align: right;
-  background-color: rbg(0, 0, 0, 0.4);
   backdrop-filter: blur(10px); }
   .return-header a {
     color: #1c494b;
