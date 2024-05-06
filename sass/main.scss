@@ -1,9 +1,13 @@
 $primary: #1c494b;
-$primary-transparent: rgba(28, 73, 75, 0.5);
+$primary-transparent: rgba(28, 73, 75, 0.8);
 $sucess: #164400;
-$sucess-transparent: rgba(22, 68, 0, 0.5);
+$sucess-transparent: rgba(22, 68, 0, 0.6);
 $fail: #9f1a1a;
 $fail-transparent: rgba(159, 26, 26, 0.5);
+$light-grey: #ececec;
+$grey: #cccad0;
+$grey-transparent: rgba(125, 125, 125, 0.5);
+$dark-grey: #969292;
 
 $breakpoints: (
   "sm": (
@@ -18,9 +22,34 @@ $breakpoints: (
 
 * {
   max-width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+article {
+  padding: 0.5rem;
+}
+
+hr {
+  border: 1px solid $grey;
+  margin: 2rem 0 2rem 0;
+}
+
+.container {
+  padding: 0 1rem 0 1rem;
+}
+
+.padding-2 {
+  padding: 2rem;
 }
 
 @import "fonts";
 @import "responsive";
 @import "base";
+@import "elements/buttons";
+@import "elements/modal";
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");

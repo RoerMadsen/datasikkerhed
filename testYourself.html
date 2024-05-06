@@ -5,39 +5,93 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="shortcut icon" href="img/HFD-favicon.png" type="image/x-icon" />
+    <script src="testYourself.js" defer></script>
     <title>Test - HfD</title>
   </head>
-  <body>
-    <header class="coverphoto">
-      <img src="" alt="profilbillede af falsk profil" class="circle" />
+  <body class="desktop mobile">
+    <header class="cover-picture">
+      <img
+        src="img/josh-pereira-wqP4m9a83nM-unsplash.jpg"
+        alt="profilbillede af falsk profil"
+        class="circle profile-picture"
+      />
     </header>
     <main>
-      <article>
-        <section>
-          <h1 class="profile-name">Katrine Jensen</h1>
-          <div class="flex-row-center">
-            <button class="btn-accept">
-              <span class="flex-inline-row-between">
-                <i class="bi bi-person-plus"></i>Accepter</span
-              >
-            </button>
-            <button><span>Slet</span></button>
+      <div id="custom-dialog" class="dialog-overlay">
+        <div class="dialog-box flex-col-center">
+          <h1 class="title">Du er næsten klar til at tage testen...</h1>
+          <p class="header-small">
+            I denne del skal du reagere på en venneanmodning fra en fremmed, på
+            et socialt medie. <br />
+            <br />
+            Du kan vælge at acceptere eller slette anmodningen ved at trykke på
+            knapperne.
+          </p>
+          <button id="close-dialogue" class="btn-primary">
+            Det er forstået!
+          </button>
+        </div>
+      </div>
+
+      <div>
+        <!-- pop op ved tryk på "slet" -->
+        <div class="modal hidden">
+          <button class="btn-close-modal close-btn">&times;</button>
+          <p class="header">Fornuftigt!</p>
+          <p class="paragraph">
+            At opdage en falsk profil på sociale medier kan være afgørende for
+            at undgå svindel. Vær opmærksom på profiler med få eller ingen
+            venner, manglende opdateringer og billeder, der virker for polerede
+            eller ideelle.
+          </p>
+          <p class="paragraph">
+            Falske profiler mangler ofte personlig information og kan forsøge at
+            kontakte dig med mistænkelig adfærd, såsom anmodninger om personlige
+            oplysninger eller finansielle transaktioner.
+          </p>
+          <div class="flex-col-center">
+            <a class="btn-primary" href="testYourself.html"
+              >Vil du prøve igen?</a
+            >
+            <a class="btn-primary-light" href="infoPage.html"
+              >Læs om datasikkerhed</a
+            >
           </div>
-        </section>
-        <section>
-          <ul class="about">
-            <li></li>
-            <li></li>
-            <li></li>
+        </div>
+
+        <div class="overlay hidden"></div>
+        <div class="desktop-row-sb">
+          <h1 class="profile-name">Katrine Jensen</h1>
+          <div class="flex-inline-row-between">
+            <a class="btn-accept" href="messagePage.html">
+              <i class="bi bi-person-plus-fill"></i>Accepter
+            </a>
+            <button class="btn-decline show-modal">
+              <span> <i class="bi bi-person-dash-fill"></i>Slet</span>
+            </button>
+          </div>
+        </div>
+        <hr />
+        <div class="desktop-row-sb">
+          <ul class="about list-no-style desktop-row-sb">
+            <li class="profile-information">Medlem siden 2024</li>
+            <li class="profile-information">Ingen fælles grupper</li>
+            <li class="profile-information">Ingen opslag</li>
           </ul>
-        </section>
-        <section>
-          <ul class="friends">
-            <li></li>
-            <li></li>
+          <hr class="desktop-hidden" />
+          <ul class="friends list-no-style desktop-row-sb">
+            <li class="profile-information-header">3 Venner</li>
+            <li class="profile-information">0 fælles venner</li>
           </ul>
-        </section>
-      </article>
+          <hr class="mobile-hidden" />
+        </div>
+      </div>
+
+      <div>
+        <div class="message">
+          <p class="paragraph post">Der er ingen opslag at vise</p>
+        </div>
+      </div>
     </main>
   </body>
 </html>

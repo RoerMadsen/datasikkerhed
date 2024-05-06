@@ -1,0 +1,107 @@
+@mixin button-style($width, $height, $font-size, $background, $margin) {
+  width: $width;
+  height: $height;
+  margin: $margin;
+  background-color: $background;
+  @include text-styles($font-family, $font-size, 300, center, white);
+  border-radius: 10px;
+  text-decoration: none;
+  line-height: $height;
+}
+
+@mixin button-hover($bg-color, $border-color, $txt-color) {
+  background-color: $bg-color;
+  border: 5px solid $border-color;
+  color: $txt-color;
+  cursor: pointer;
+}
+
+.btn-primary {
+  display: block;
+  border: 5px solid white;
+  @include button-style(300px, 60px, 1.5rem, $primary, 0.5rem);
+  &:hover {
+    @include button-hover(white, $primary, $primary);
+  }
+}
+
+.btn-primary-light {
+  display: block;
+  border: 5px solid white;
+  @include button-style(300px, 60px, 1.5rem, $primary-transparent, 0.5rem);
+  &:hover {
+    @include button-hover(white, $primary-transparent, $primary-transparent);
+  }
+}
+
+@mixin button-btn {
+  padding: 0.5rem;
+}
+
+.btn-accept {
+  border: 5px solid $primary;
+  margin-right: 10px;
+  @include button-style(auto, 100%, 1.2rem, $primary, null);
+  @include button-btn();
+  &:hover {
+    @include button-hover(white, $primary, $primary);
+  }
+}
+
+.btn-decline {
+  border: 5px solid $grey;
+  @include button-style(150px, 100%, 1.2rem, $grey, null);
+  color: black;
+  @include button-btn();
+  &:hover {
+    @include button-hover(white, $grey, black);
+  }
+}
+
+.btn-guess {
+  @include button-style(auto, auto, 1rem, $primary, 0.5rem);
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  border: 3px solid $primary;
+  &:hover {
+    background-color: $primary-transparent;
+    border: 3px solid $grey;
+  }
+}
+
+.messenger-link-btn {
+  text-decoration: underline;
+  color: $primary;
+  border: none;
+
+  &:hover {
+    color: $fail;
+    cursor: pointer;
+  }
+}
+
+#block-report-btn {
+  border: none;
+  background-color: white;
+}
+
+.pw-message-btn {
+  border: none;
+  width: 100%;
+  height: 100px;
+  padding: 1rem;
+  @include text-styles($font-family, 1.2rem, 400, center, $primary);
+
+  &:hover {
+    color: $primary-transparent;
+    cursor: pointer;
+    background-color: white;
+  }
+}
+
+.show-password {
+  border: none;
+  font-size: 2rem;
+  color: $primary;
+  background-color: $light-grey;
+  cursor: pointer;
+}

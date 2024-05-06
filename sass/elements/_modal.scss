@@ -1,0 +1,162 @@
+@mixin modal($background, $padding) {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 60rem;
+  padding: $padding;
+  box-shadow: 0 4rem 6rem rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  transition: all 0.5s;
+  background-color: $background;
+}
+
+.modal,
+.dialog-box {
+  @include modal(white, 2rem 4rem);
+
+  @media (min-width: 331px) {
+    .header {
+      margin: 1rem 0.5rem;
+    }
+    .dialogue-wide {
+      width: 600px;
+    }
+    p {
+      padding: 1.5rem;
+    }
+  }
+
+  @media (max-width: 330px) {
+    .header {
+      margin: 2rem 0.5rem 0rem 0.5rem;
+    }
+    p {
+      padding: 1rem;
+    }
+  }
+}
+
+#pw {
+  display: none;
+}
+
+#test-completed {
+  display: none;
+
+  .btn-primary,
+  .btn-primary-light {
+    width: 400px;
+  }
+}
+#blocked-reported {
+  display: none;
+}
+
+.dialog-content {
+  @include modal($light-grey, 1rem 0);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  .header-small {
+    font-weight: 500;
+    font-size: 1.2rem;
+    padding: 2rem;
+  }
+  .paragraph {
+    padding: 1rem 2rem;
+  }
+
+  .input-field {
+    border: 1px solid $primary-transparent;
+    margin: 1rem;
+
+    &:hover {
+      border: 2px solid $primary;
+    }
+  }
+}
+
+.failure-txt {
+  color: $fail !important;
+}
+
+.hr-dark {
+  border: 2px solid $grey-transparent;
+  width: 100%;
+}
+
+@mixin overlay($background) {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(4px);
+  z-index: 100;
+  transition: all 0.5s;
+}
+
+.overlay,
+.dialog-overlay {
+  @include overlay($grey-transparent);
+}
+
+.dialog-overlay {
+  background-color: $grey-transparent; // Standard baggrundsfarve for overlay
+}
+
+.winOverlay {
+  @include overlay($sucess-transparent);
+}
+
+.dialog-overlay.fail-background {
+  background-color: $fail-transparent; // Baggrundsfarve for fail-state
+}
+
+.btn-close-modal,
+.close-btn {
+  font-family: inherit;
+  color: $primary;
+  font-size: 4rem;
+  cursor: pointer;
+  border: none;
+  background: none;
+
+  @media (min-width: 331px) {
+    position: inherit;
+    top: 0.5rem;
+    right: 2rem;
+  }
+
+  @media (max-width: 330px) {
+    position: absolute;
+    top: 0.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 330px) {
+  .dialog-content {
+    padding: 6rem 1rem 2rem 1rem;
+  }
+
+  #test-completed {
+    max-width: 100%;
+
+    .btn-primary,
+    .btn-primary-light {
+      max-width: 300px;
+    }
+  }
+}
+
+@media (min-width: 331px) {
+  .input-field {
+    width: 270px;
+    height: 30px;
+  }
+}
