@@ -22,21 +22,34 @@
         />
         <p class="paragraph">Katrine Jensen</p>
       </div>
-
+      <!--opkald og video ikoner-->
       <div class="flex-inline-row-between">
         <figure><i class="bi bi-telephone-fill"></i></figure>
         <figure><i class="bi bi-camera-video-fill"></i></figure>
       </div>
     </header>
     <main>
-      <section class="grid-messenger">
-        <!-- <div class="col-span-1 start-row-1 start-col-1">
-          <img
-            src="img/josh-pereira-wqP4m9a83nM-unsplash.jpg"
-            class="messenger-picture"
-            alt="Profilbillede: en smuk lyshåret kvinde i badetøj"
-          />
-        </div> -->
+      <!--Dialogboks der indlæses når siden åbnes-->
+      <div id="info-dialog" class="dialog-overlay">
+        <div class="dialog-box flex-col-center">
+          <h1 class="title">Del 2</h1>
+          <p class="paragraph">
+            Du har accepteret venneanmodning og modtager nu en række beskeder
+            fra den fremmede profil.
+          </p>
+          <p class="paragraph">
+            En af beskederne indeholder et link, du kan nu vælge at trykke på
+            linket, eller at anmelde og blokere brugeren ved at trykke på den
+            grønne advarsels-trekant i bunden af siden.
+          </p>
+          <button id="close-info-dialogue" class="btn-primary">
+            Tak, det er forstået!
+          </button>
+        </div>
+      </div>
+
+      <!--Messenger beskeder + bloker og anmeld knap. Beskeder vises med forsinkelse - se message-js.-->
+      <article class="grid-messenger">
         <div class="col-span-2 row-span-1 start-col-1">
           <h2 class="messenger-name">Katrine Jensen</h2>
         </div>
@@ -53,28 +66,17 @@
               beskeden, eller du kan trykke på linket og se hvad der kan ske.
             </p>
           </div>
-          <button class="block-report-btn">
+          <button id="block-report-btn">
             <i class="bi bi-exclamation-triangle-fill"></i>
           </button>
         </section>
-      </section>
+      </article>
 
-      <div id="info-dialog" class="dialog-overlay">
-      <div class="dialog-box flex-col-center">
-        <h1 class="title">Del 2</h1>
-        <p class="paragraph">
-          Du har accepteret venneanmodning og modtager nu en række beskeder fra den fremmede profil.</p>
-          <p class="paragraph">
-          En af beskederne indeholder et link, du kan nu vælge at trykke på linket, eller at anmelde og blokere brugeren ved at trykke på den grønne advarsels-trekant i bunden af siden.
-        </p>
-        <button id="close-info-dialogue" class="btn-primary">
-          Tak, det er forstået!
-        </button>
-      </div>
-      </div>
-
-      <div id="pw-dialog" class="dialog-overlay">
+      <!--Dialogboks der åbnes når man trykker på det falske link-->
+      <div id="pw" class="dialog-overlay">
         <div class="pw-dialog-box flex-col-center">
+          <button class="close-change-pw-modal close-btn">&times;</button>
+          <!--Første "side" i dialogboksen-->
           <div id="change-password" class="flex-col-center">
             <p class="header-small">
               Dit password er dukket op i et datalæk, hvilket giver risiko for
@@ -83,50 +85,49 @@
             </p>
             <div class="flex-col-center">
               <button id="change-pw-btn" class="btn-primary">
-              Skift password nu
-            </button>
-            <button id="decline-pw-btn" class="btn-primary-light">Ikke nu</button>
+                Skift password nu
+              </button>
+              <button id="decline-pw-btn" class="btn-primary-light">
+                Ikke nu
+              </button>
             </div>
-            
           </div>
         </div>
 
-          <div id="create-new-password" class="dialog-overlay">
-            <div class="flex-col-center pw-dialog-box dialogue-wide">
-              <p class="header">Opret et stærkt password.</p>
-              <p class="paragraph">
-                Et stærkt password er svært at gætte eller hacke. Vi anbefaler
-                at det er over 8 tegn og indeholder en blanding af store og små
-                bogstaver, tal og specialtegn.
-              </p>
-              <p class="paragraph">
-                Prøv dig frem med forskellige variationer og tryk på "tjek
-                styrke". Når du er færdig kan du trykke på "gem og afslut test"
-              </p>
-              <div class="flex-row-center">
-                <input
-                  type="password"
-                  class="pw-input input-field"
-                  placeholder="Skriv et password her..."
-                />
-                <button class="show-password">
-                  <i class="bi bi-eye eye-icon"></i>
-                </button>
-              </div>
-              <p class="pw-message header-small">Prøv dig frem!</p>
-              <button type="submit" class="pw-submit btn-primary">
-                Tjek styrke
-              </button>
-              <button class="save-quit btn-primary-light">
-                Gem og afslut test
+        <!-- indholdet der vises i dialogboksen hvis man vælger "skift password nu"-->
+        <div id="new-pw" class="dialog-overlay">
+          <div class="flex-col-center pw-dialog-box dialogue-wide">
+            <p class="header">Opret et stærkt password.</p>
+            <p class="paragraph">
+              Et stærkt password er svært at gætte eller hacke. Vi anbefaler at
+              det er over 8 tegn og indeholder en blanding af store og små
+              bogstaver, tal og specialtegn.
+            </p>
+            <p class="paragraph">
+              Prøv dig frem med forskellige variationer og tryk på "tjek
+              styrke". Når du er færdig kan du trykke på "gem og afslut test"
+            </p>
+            <div class="flex-row-center">
+              <input
+                type="password"
+                class="pw-input input-field"
+                placeholder="Skriv et password her..."
+              />
+              <button class="show-password">
+                <i class="bi bi-eye eye-icon"></i>
               </button>
             </div>
+            <p class="pw-message header-small">Prøv dig frem!</p>
+            <button type="submit" class="pw-submit btn-primary">
+              Tjek styrke
+            </button>
+            <button class="save-quit btn-primary-light">
+              Gem og afslut test
+            </button>
           </div>
-
-      <div
-          id="data-leaked"
-          class="flex-col-center pw-dialog-box failure-bg"
-        >
+        </div>
+        <!--Indholdet der vises hvis man trykker på "ikke nu"-->
+        <div id="data-leaked" class="flex-col-center pw-dialog-box failure-bg">
           <h2 class="header failure-txt">UPS!</h2>
           <h3 class="header-small failure-txt">
             Det er vigtigt at reagere, hvis dit password er kompromitteret.
@@ -138,19 +139,56 @@
             økonomisk tab og misbrug af dine konti. Det er afgørende at handle
             hurtigt for at sikre dine konti og minimere potentielle skader
           </p>
-          <section class="flex-col-center padding-2">
+          <div class="flex-col-center padding-2">
             <a class="btn-primary" href="testYourself.html"
               >Vil du prøve igen?</a
             >
             <a class="btn-primary-light" href="infoPage.html"
               >Læs om datasikkerhed</a
             >
-          </section>
+          </div>
         </div>
+      </div>
 
+      <!--Indholdet der vises når man trykker "gem og afslut"-->
       <div id="test-completed" class="dialog-overlay">
         <div class="modal">
+          <button class="close-test-completed-modal close-btn">&times;</button>
           <p class="header">Du har gennemført testen!</p>
+          <section class="flex-col-center">
+            <a class="btn-primary" href="testYourself.html"
+              >Vil du prøve igen?</a
+            >
+            <a class="btn-primary-light" href="infoPage.html"
+              >Eller Læse om datasikkerhed?</a
+            >
+          </section>
+        </div>
+      </div>
+
+      <!--Dialogboks der åbnes hvis man vælger at anmelde og blokere-->
+      <div id="blocked-reported" class="dialog-overlay">
+        <div class="modal">
+          <button class="close-blocked-reported-modal close-btn">
+            &times;
+          </button>
+          <p class="header">Flot! Du har Blokeret og anmeldt profilen.</p>
+          <p class="paragraph">
+            At blokere og anmelde mistænkelige profiler på sociale medier er
+            afgørende af flere grunde. For det første beskytter det ens egen
+            sikkerhed og privatliv. Mistænkelige profiler kan være oprettet af
+            personer med onde hensigter såsom svindlere, stalkere eller hackere,
+            og ved at blokere dem forhindrer man dem i at interagere med ens
+            profil eller indhente personlige oplysninger.
+          </p>
+          <p class="paragraph">
+            Derudover bidrager blokering og anmeldelse af mistænkelige profiler
+            til at beskytte andre brugere. Når en mistænkelig profil bliver
+            anmeldt, kan platformens sikkerhedsteam undersøge den og træffe
+            nødvendige foranstaltninger, såsom at suspendere eller fjerne
+            profilen. Dette hjælper med at skabe en sikrere online miljø for
+            alle brugere.
+          </p>
           <section class="flex-col-center">
             <a class="btn-primary" href="testYourself.html"
               >Vil du prøve igen?</a

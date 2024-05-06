@@ -629,7 +629,7 @@ hr {
     color: #9f1a1a;
     cursor: pointer; }
 
-.block-report-btn {
+#block-report-btn {
   border: none;
   background-color: white; }
 
@@ -672,7 +672,7 @@ hr {
   .dialog-box p {
     padding: 1.5rem; }
 
-#pw-dialog {
+#pw {
   display: none; }
 
 #test-completed {
@@ -680,6 +680,9 @@ hr {
   #test-completed .btn-primary,
   #test-completed .btn-primary-light {
     width: 400px; }
+
+#blocked-reported {
+  display: none; }
 
 .pw-dialog-box {
   position: fixed;
@@ -745,7 +748,8 @@ hr {
 .dialog-overlay.fail-background {
   background-color: rgba(159, 26, 26, 0.5); }
 
-.btn-close-modal {
+.btn-close-modal,
+.close-btn {
   font-family: inherit;
   color: #1c494b;
   position: absolute;

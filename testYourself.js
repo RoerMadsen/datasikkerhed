@@ -2,7 +2,7 @@
 
 const modal = document.querySelector(".modal");
 const overlay = document.querySelector(".overlay");
-const btnCloseModal = document.querySelector(".close-modal");
+const btnCloseModal = document.querySelector(".btn-close-modal");
 const btnsOpenModal = document.querySelectorAll(".show-modal");
 
 document.addEventListener("DOMContentLoaded", function () {

@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
   const infoDialog = document.getElementById("info-dialog");
-  const pwDialog = document.getElementById("pw-dialog");
+  const pwDialog = document.getElementById("pw");
 
   // Open info dialog when the page loads
   infoDialog.style.display = "block";
@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", function () {
     .addEventListener("click", function () {
       pwDialog.style.display = "block";
       document.getElementById("change-password").style.display = "block";
-      document.getElementById("create-new-password").style.display = "none";
+      document.getElementById("new-pw").style.display = "none";
       document.getElementById("data-leaked").style.display = "none";
     });
 
@@ -53,7 +53,7 @@ document.addEventListener("DOMContentLoaded", function () {
     .getElementById("change-pw-btn")
     .addEventListener("click", function () {
       document.getElementById("change-password").style.display = "none";
-      document.getElementById("create-new-password").style.display = "block";
+      document.getElementById("new-pw").style.display = "block";
     });
 
   // Switch pw dialog content to data leaked when decline button is clicked
@@ -75,23 +75,23 @@ document.addEventListener("DOMContentLoaded", function () {
 
 ///////////////////////////////// Tjek password styrke
 document.querySelector(".pw-submit").addEventListener("click", function () {
-  const guess = document.querySelector(".pw-input").value;
-  console.log(guess, typeof guess);
+  const pwGuess = document.querySelector(".pw-input").value;
+  console.log(pwGuess, typeof pwGuess);
 
   //Hvis der ikke er indtastet et password
-  if (!guess) {
+  if (!pwGuess) {
     document.querySelector(".pw-message").textContent =
       "Hov, feltet er tomt! Indtast venligst et password du vil teste, og prøv igen.";
     console.log("tomt felt");
-  } else if (guess.length < 8) {
+  } else if (pwGuess.length < 8) {
     document.querySelector(".pw-message").textContent = `Dit password er kun ${
-      guess.length
-    } tegn! Du mangler ${8 - guess.length} tegn, før det er sikkert.`;
+      pwGuess.length
+    } tegn! Du mangler ${8 - pwGuess.length} tegn, før det er sikkert.`;
     console.log("pw under 8 tegn");
   } else {
     // Check for tal og specialtegn
-    const containsNumber = /\d/.test(guess);
-    const containsSpecialChar = /[!@#$%^&*(),.?":{}|<>]/.test(guess);
+    const containsNumber = /\d/.test(pwGuess);
+    const containsSpecialChar = /[!@#$%^&*(),.?":{}|<>]/.test(pwGuess);
 
     if (!containsNumber || !containsSpecialChar) {
       document.querySelector(".pw-message").textContent =
@@ -100,7 +100,7 @@ document.querySelector(".pw-submit").addEventListener("click", function () {
     } else {
       document.querySelector(
         ".pw-message"
-      ).textContent = `Flot! Dit password "${guess}" opfylder alle krav.`;
+      ).textContent = `Flot! Dit password "${pwGuess}" opfylder alle krav.`;
       console.log("gyldigt password");
     }
   }
@@ -108,18 +108,18 @@ document.querySelector(".pw-submit").addEventListener("click", function () {
 
 //////////// Knap til at afslutte testen
 document.querySelector(".save-quit").addEventListener("click", function () {
-  document.getElementById("pw-dialog").style.display = "none";
+  document.getElementById("pw").style.display = "none";
   document.getElementById("test-completed").style.display = "block";
 });
 
 document.querySelector(".save-quit").addEventListener("click", function () {
-  document.getElementById("pw-dialog").style.display = "none";
+  document.getElementById("pw").style.display = "none";
   document.getElementById("test-completed").style.display = "block";
 });
 
 ///////////  Vis / Skjul password
 document.querySelector(".save-quit").addEventListener("click", function () {
-  document.getElementById("pw-dialog").style.display = "none";
+  document.getElementById("pw").style.display = "none";
   document.getElementById("test-completed").style.display = "block";
 });
 
@@ -144,3 +144,29 @@ document.querySelector(".show-password").addEventListener("click", function () {
     eyeIcon.classList.add("bi-eye");
   }
 });
+
+///////////// Bloker og anmeld knap
+document
+  .querySelector("#block-report-btn")
+  .addEventListener("click", function () {
+    document.querySelector("#blocked-reported").style.display = "block";
+  });
+
+/////////////// luk dialogboks knapper
+document
+  .querySelector(".close-report-modal")
+  .addEventListener("click", function () {
+    document.querySelector("#blocked-reported").style.display = "none";
+  });
+
+document
+  .querySelector(".close-test-completed-modal")
+  .addEventListener("click", function () {
+    document.querySelector("#test-completed").style.display = "none";
+  });
+
+document
+  .querySelector(".close-pw-modal")
+  .addEventListener("click", function () {
+    document.querySelector("#pw").style.display = "none";
+  });

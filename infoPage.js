@@ -59,12 +59,8 @@ document
         `Det er rigtigt! ca. ${correctIdentityNumber}.000 danskere udsættes hvert år for identitesvindel.`
       );
     } else if (guess > correctIdentityNumber) {
-      displayIdentityMessage(
-        "Dit gæt er lidt for højt, prøv et lavere tal (husk at det er et rundt tal)"
-      );
+      displayIdentityMessage("Dit gæt er lidt for højt, prøv et lavere tal");
     } else if (guess < correctIdentityNumber) {
-      displayIdentityMessage(
-        "Dit gæt er lidt for lavt, prøv et lavere tal (husk at det er et rundt tal)"
-      );
+      displayIdentityMessage("Dit gæt er lidt for lavt, prøv et lavere tal.");
     }
   });
