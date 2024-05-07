@@ -31,7 +31,7 @@ document
       displayPercentageMessage("Hov! du har ikke indtastet noget. Prøv igen");
     } else if (guess === correctPercentage) {
       displayPercentageMessage(
-        `Det er rigtigt! ca. ${correctPercentage}.000 danskere bliver hvert år ofre for identitetsvindel.`
+        `Det er rigtigt! ca. ${correctPercentage}% af datalæk skyldes svage eller genbrugte adgangskoder.`
       );
     } else if (guess > correctPercentage) {
       displayPercentageMessage(
@@ -41,6 +41,8 @@ document
       displayPercentageMessage(
         "Dit gæt er lidt for lavt, prøv et lavere tal (husk at det er et rundt tal)"
       );
+    }else if (guess !== Number){
+      displayPercentageMessage("det")
     }
   });
 

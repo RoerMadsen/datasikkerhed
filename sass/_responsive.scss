@@ -197,11 +197,10 @@
     }
 
     //////////////////Test startside
-    .cover-picture {
-      background-image: url("img/cover-photo-desktop.png");
-      background-repeat: no-repeat;
-      background-position: center;
-      height: 150px;
+  
+
+    .profile-name{
+      padding-top: 2rem;
     }
 
     .about li {
@@ -222,6 +221,13 @@
         text-align: left;
       }
     }
+  }
+  .cover-picture {
+    background-image: url("img/cover-photo-desktop.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 250px;
+    margin-bottom: 2rem;
   }
 
   .mini-quiz {
