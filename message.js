@@ -162,3 +162,4 @@ function addCloseModalListeners(modalClass, modalId) {
 addCloseModalListeners(".close-blocked-reported-modal", "#blocked-reported");
 addCloseModalListeners(".close-test-completed-modal", "#test-completed");
 addCloseModalListeners(".close-pw-modal", "#pw");
+addCloseModalListeners(".close-new-pw-modal", "#new-pw");

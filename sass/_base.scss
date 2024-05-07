@@ -33,6 +33,7 @@ $font-family: "Oswald-VariableFont_wght.ttf", sans-serif;
 
 .header {
   @include text-styles($font-family, 1.5rem, 600, center, $primary);
+  padding: 2rem;
 }
 .header-small {
   @include text-styles($font-family, 1rem, 500, center, $primary);

@@ -234,7 +234,7 @@ hr {
     .percentage-fieldset input {
       max-width: 50%; }
   .cover-picture {
-    background-image: url("/img/cover-pigture-mobile.png");
+    background-image: url("img/cover-pigture-mobile.png");
     background-repeat: no-repeat;
     background-position: center;
     height: 150px;
@@ -272,11 +272,8 @@ hr {
         padding: 1rem 0; }
     .desktop .logo {
       max-width: 200px; }
-    .desktop .cover-picture {
-      background-image: url("/img/cover-photo-desktop.png");
-      background-repeat: no-repeat;
-      background-position: center;
-      height: 150px; }
+    .desktop .profile-name {
+      padding-top: 2rem; }
     .desktop .about li {
       margin-right: 1.5rem; }
     .desktop .friends li {
@@ -289,6 +286,12 @@ hr {
     .desktop .info-text-block p {
       padding: 0 4rem;
       text-align: left; }
+  .cover-picture {
+    background-image: url("img/cover-photo-desktop.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 250px;
+    margin-bottom: 2rem; }
   .mini-quiz {
     padding: 2rem;
     margin: 2rem 0; }
@@ -339,7 +342,8 @@ hr {
   font-weight: 600;
   text-align: center;
   letter-spacing: 0.5px;
-  color: #1c494b; }
+  color: #1c494b;
+  padding: 2rem; }
 
 .header-small {
   font-family: "Oswald-VariableFont_wght.ttf", sans-serif;
