@@ -9,6 +9,11 @@ $grey: #cccad0;
 $grey-transparent: rgba(125, 125, 125, 0.5);
 $dark-grey: #969292;
 
+@font-face {
+  font-family: "Oswald";
+  src: url("../Oswald-VariableFont_wght.ttf") format("truetype");
+}
+
 $breakpoints: (
   "sm": (
     max: 330px,
@@ -47,7 +52,6 @@ hr {
   padding: 2rem;
 }
 
-@import "fonts";
 @import "responsive";
 @import "base";
 @import "elements/buttons";

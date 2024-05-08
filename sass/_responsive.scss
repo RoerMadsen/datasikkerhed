@@ -5,31 +5,43 @@
   align-items: $align-items;
   justify-content: $justify-content;
 }
-.flex-row {
-  @include responsive-flex(flex, row, center, null);
+/* Flexbox utility classes */
+.flex {
+  &-row {
+    &-center {
+      @include responsive-flex(flex, row, center, null);
+    }
+    &-sb {
+      @include responsive-flex(flex, row, center, space-between);
+    }
+  }
+  
+  &-col {
+    &-center {
+      @include responsive-flex(flex, column, center, center);
+    }
+    &-reverse {
+      @include responsive-flex(flex, column-reverse, center, center);
+    }
+  }
+  
+  &-inline {
+    &-row {
+      &-center {
+        @include responsive-flex(inline-flex, row, center, center);
+      }
+      &-between {
+        @include responsive-flex(inline-flex, row, center, space-between);
+      }
+    }
+    &-col {
+      &-center {
+        @include responsive-flex(inline-flex, column, center, center);
+      }
+    }
+  }
 }
 
-.flex-col-center {
-  @include responsive-flex(flex, column, center, center);
-}
-.flex-row-sb {
-  @include responsive-flex(flex, row, center, space-between);
-}
-.flex-col-reverse {
-  @include responsive-flex(flex, column-reverse, center, center);
-}
-.flex-row-center {
-  @include responsive-flex(flex, row, center, center);
-}
-.flex-inline-col-center {
-  @include responsive-flex(inline-flex, column, center, center);
-}
-.flex-inline-row-center {
-  @include responsive-flex(inline-flex, row, center, center);
-}
-.flex-inline-row-between {
-  @include responsive-flex(inline-flex, row, center, space-between);
-}
 
 /*---------------Grid----------*/
 @mixin responsive-grid($display, $columns, $gap) {
@@ -39,22 +51,22 @@
 }
 
 // //giver classes .col-span-xx. denne class justeres ikke efter skærmstørrelse
-@for $i from 1 to 13 {
+@for $i from 1 to 3 {
   .col-span-#{$i} {
     grid-column: span $i;
   }
 }
-@for $i from 1 to 13 {
+@for $i from 1 to 3 {
   .row-span-#{$i} {
     grid-row: span $i;
   }
 }
-@for $i from 1 to 6 {
+@for $i from 1 to 4 {
   .start-row-#{$i} {
     grid-row-start: $i;
   }
 }
-@for $i from 1 to 6 {
+@for $i from 1 to 4 {
   .start-col-#{$i} {
     grid-column-start: $i;
   }

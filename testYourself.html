@@ -9,6 +9,25 @@
     <title>Test - HfD</title>
   </head>
   <body class="desktop mobile">
+          <!--Dialogboks, der åbnes når siden indlæses-->
+          <div id="custom-dialog" class="dialog-overlay">
+            <div class="dialog-box flex-col-center">
+              <h1 class="title">Du er næsten klar til at tage testen...</h1>
+              <p class="header-small">
+                I denne del skal du reagere på en venneanmodning fra en fremmed, på
+                et socialt medie. <br />
+                <br />
+                Du kan vælge at acceptere eller slette anmodningen ved at trykke på
+                knapperne.
+              </p>
+              <button id="close-dialogue" class="btn-primary">
+                Det er forstået!
+              </button>
+            </div>
+          </div>
+            <div class="overlay hidden"></div>
+
+    <!--Facebook lignende profil- og coverbillede-->
     <header class="cover-picture">
       <img
         src="img/josh-pereira-wqP4m9a83nM-unsplash.jpg"
@@ -16,50 +35,10 @@
         class="circle profile-picture"
       />
     </header>
+
+
     <main>
-      <div id="custom-dialog" class="dialog-overlay">
-        <div class="dialog-box flex-col-center">
-          <h1 class="title">Du er næsten klar til at tage testen...</h1>
-          <p class="header-small">
-            I denne del skal du reagere på en venneanmodning fra en fremmed, på
-            et socialt medie. <br />
-            <br />
-            Du kan vælge at acceptere eller slette anmodningen ved at trykke på
-            knapperne.
-          </p>
-          <button id="close-dialogue" class="btn-primary">
-            Det er forstået!
-          </button>
-        </div>
-      </div>
-
-      <div>
-        <!-- pop op ved tryk på "slet" -->
-        <div class="modal hidden">
-          <button class="btn-close-modal close-btn">&times;</button>
-          <p class="header">Fornuftigt!</p>
-          <p class="paragraph">
-            At opdage en falsk profil på sociale medier kan være afgørende for
-            at undgå svindel. Vær opmærksom på profiler med få eller ingen
-            venner, manglende opdateringer og billeder, der virker for polerede
-            eller ideelle.
-          </p>
-          <p class="paragraph">
-            Falske profiler mangler ofte personlig information og kan forsøge at
-            kontakte dig med mistænkelig adfærd, såsom anmodninger om personlige
-            oplysninger eller finansielle transaktioner.
-          </p>
-          <div class="flex-col-center">
-            <a class="btn-primary" href="testYourself.html"
-              >Vil du prøve igen?</a
-            >
-            <a class="btn-primary-light" href="infoPage.html"
-              >Læs om datasikkerhed</a
-            >
-          </div>
-        </div>
-
-        <div class="overlay hidden"></div>
+        <!--Facebook profil oplysninger og slet/accepter knapper-->
         <div class="desktop-row-sb">
           <h1 class="profile-name">Katrine Jensen</h1>
           <div class="flex-inline-row-between">
@@ -85,13 +64,13 @@
           </ul>
           <hr class="mobile-hidden" />
         </div>
-      </div>
 
-      <div>
+        <!--grå boks, hvor der ville være opslag på en aktiv profil-->
         <div class="message">
           <p class="paragraph post">Der er ingen opslag at vise</p>
         </div>
-      </div>
+
+        
     </main>
   </body>
 </html>

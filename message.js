@@ -2,18 +2,18 @@ document.addEventListener("DOMContentLoaded", function () {
   const infoDialog = document.getElementById("info-dialog");
   const pwDialog = document.getElementById("pw");
 
-  // Open info dialog when the page loads
+  // Åbner dialogboks når siden indlæses
   infoDialog.style.display = "block";
 
-  // Close info dialog when close button is clicked
-  document
-    .getElementById("close-info-dialogue")
-    .addEventListener("click", function () {
-      infoDialog.style.display = "none";
-      startDelayedMessages();
-    });
+  // Lukker dialogboks
+  function closeInfoDialog() {
+    infoDialog.style.display = "none";
+    startDelayedMessages();
+  }
 
-  // Function to start delayed messages
+  document.getElementById("close-info-dialogue").addEventListener("click", closeInfoDialog);
+
+  // Funktion der forsinker indlæsningen af messengerbeskeder
   function startDelayedMessages() {
     const messagesContainer = document.querySelector(".messages");
     const messageTexts = [
@@ -38,34 +38,29 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // Open pw dialog when link button is clicked
-  document
-    .getElementById("link-message")
-    .addEventListener("click", function () {
-      pwDialog.style.display = "block";
-      document.getElementById("change-password").style.display = "block";
-      document.getElementById("new-pw").style.display = "none";
-      document.getElementById("data-leaked").style.display = "none";
-    });
+  // Åbner dialogboks om "lækket password" når man trykker på beskeden med linket
+  function openPasswordDialog() {
+    pwDialog.style.display = "block";
+    document.getElementById("change-password").style.display = "block";
+    document.getElementById("new-pw").style.display = "none";
+    document.getElementById("data-leaked").style.display = "none";
+  }
 
-  // Switch pw dialog content when change password button is clicked
-  document
-    .getElementById("change-pw-btn")
-    .addEventListener("click", function () {
-      document.getElementById("change-password").style.display = "none";
-      document.getElementById("new-pw").style.display = "block";
-    });
+  document.getElementById("link-message").addEventListener("click", openPasswordDialog);
 
-  // Switch pw dialog content to data leaked when decline button is clicked
-  document
-    .getElementById("decline-pw-btn")
-    .addEventListener("click", function () {
-      document.getElementById("change-password").innerHTML =
-        document.getElementById("data-leaked").innerHTML;
-      pwDialog.classList.add("fail-background");
-    });
+  // Skifter indholdet i dialogboksen hvis man vil skifte password
+  document.getElementById("change-pw-btn").addEventListener("click", function () {
+    document.getElementById("change-password").style.display = "none";
+    document.getElementById("new-pw").style.display = "block";
+  });
 
-  // Close pw dialog when clicking outside of the dialog
+  // Skifter indholdet i dialogboksen hvis man ikke skifter
+  document.getElementById("decline-pw-btn").addEventListener("click", function () {
+    document.getElementById("change-password").innerHTML = document.getElementById("data-leaked").innerHTML;
+    pwDialog.classList.add("fail-background");
+  });
+
+  // Lukker dialogboks hvis man trykker uden for den.
   window.addEventListener("click", function (event) {
     if (event.target === pwDialog) {
       pwDialog.style.display = "none";
@@ -73,86 +68,43 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-///////////////////////////////// Tjek password styrke
+// Bloker og anmeld knap
+document.getElementById("block-report-btn").addEventListener("click", function () {
+  document.getElementById("blocked-reported").style.display = "block";
+});
+
+// Tjek password styrke
 document.querySelector(".pw-submit").addEventListener("click", function () {
   const pwGuess = document.querySelector(".pw-input").value;
-  console.log(pwGuess, typeof pwGuess);
+  const pwMessage = document.querySelector(".pw-message");
 
-  //Hvis der ikke er indtastet et password
   if (!pwGuess) {
-    document.querySelector(".pw-message").textContent =
-      "Hov, feltet er tomt! Indtast venligst et password du vil teste, og prøv igen.";
-    console.log("tomt felt");
+    pwMessage.textContent = "Hov, feltet er tomt! Indtast venligst et password du vil teste, og prøv igen.";
   } else if (pwGuess.length < 8) {
-    document.querySelector(".pw-message").textContent = `Dit password er kun ${
-      pwGuess.length
-    } tegn! Du mangler ${8 - pwGuess.length} tegn, før det er sikkert.`;
-    console.log("pw under 8 tegn");
+    pwMessage.textContent = `Dit password er kun ${pwGuess.length} tegn! Du mangler ${8 - pwGuess.length} tegn, før det er sikkert.`;
   } else {
-    // Check for tal og specialtegn
     const containsNumber = /\d/.test(pwGuess);
     const containsSpecialChar = /[!@#$%^&*(),.?":{}|<>]/.test(pwGuess);
 
     if (!containsNumber || !containsSpecialChar) {
-      document.querySelector(".pw-message").textContent =
-        "Dit password skal indeholde mindst et tal og et specialtegn.";
-      console.log("mangler tal eller specialtegn");
+      pwMessage.textContent = "Dit password skal indeholde mindst et tal og et specialtegn.";
     } else {
-      document.querySelector(
-        ".pw-message"
-      ).textContent = `Flot! Dit password "${pwGuess}" opfylder alle krav.`;
-      console.log("gyldigt password");
+      pwMessage.textContent = `Flot! Dit password "${pwGuess}" opfylder alle krav.`;
     }
   }
 });
 
-//////////// Knap til at afslutte testen
-document.querySelector(".save-quit").addEventListener("click", function () {
-  document.getElementById("pw").style.display = "none";
-  document.getElementById("test-completed").style.display = "block";
-});
-
-document.querySelector(".save-quit").addEventListener("click", function () {
-  document.getElementById("pw").style.display = "none";
-  document.getElementById("test-completed").style.display = "block";
-});
-
-///////////  Vis / Skjul password
-document.querySelector(".save-quit").addEventListener("click", function () {
-  document.getElementById("pw").style.display = "none";
-  document.getElementById("test-completed").style.display = "block";
-});
-
+// Vis / Skjul password
 document.querySelector(".show-password").addEventListener("click", function () {
-  // Vælg input-elementet med klassen '.pw-input'
   const passwordInput = document.querySelector(".pw-input");
-  // Vælg ikonet med klassen '.eye-icon'
   const eyeIcon = document.querySelector(".eye-icon");
 
-  // Tjek den aktuelle type af input
-  if (passwordInput.type === "password") {
-    // Hvis inputtypen er 'password', skift den til 'text'
-    passwordInput.type = "text";
-    // Skift ikonet til 'bi-eye-fill'
-    eyeIcon.classList.remove("bi-eye");
-    eyeIcon.classList.add("bi-eye-fill");
-  } else {
-    // Hvis inputtypen ikke er 'password' (dvs. 'text'), skift den til 'password'
-    passwordInput.type = "password";
-    // Skift ikonet tilbage til 'bi-eye'
-    eyeIcon.classList.remove("bi-eye-fill");
-    eyeIcon.classList.add("bi-eye");
-  }
+  passwordInput.type = passwordInput.type === "password" ? "text" : "password";
+  eyeIcon.classList.toggle("bi-eye-fill");
+  eyeIcon.classList.toggle("bi-eye");
 });
 
-///////////// Bloker og anmeld knap
-document
-  .querySelector("#block-report-btn")
-  .addEventListener("click", function () {
-    document.querySelector("#blocked-reported").style.display = "block";
-  });
-
-/////////////// luk dialogboks knapper
+// Luk dialogboks knapper
 function addCloseModalListeners(modalClass, modalId) {
   document.querySelector(modalClass).addEventListener("click", function () {
     document.querySelector(modalId).style.display = "none";
@@ -163,3 +115,9 @@ addCloseModalListeners(".close-blocked-reported-modal", "#blocked-reported");
 addCloseModalListeners(".close-test-completed-modal", "#test-completed");
 addCloseModalListeners(".close-pw-modal", "#pw");
 addCloseModalListeners(".close-new-pw-modal", "#new-pw");
+
+// Knap til at afslutte testen
+document.querySelector(".save-quit").addEventListener("click", function () {
+  document.getElementById("pw").style.display = "none";
+  document.getElementById("test-completed").style.display = "block";
+});

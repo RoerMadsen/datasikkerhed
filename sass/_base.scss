@@ -1,7 +1,69 @@
-/*--------------------Farver----------*/
+
+// Color variables
+$primary: #1c494b;
+$primary-transparent: rgba(28, 73, 75, 0.8);
+$success: #164400;
+$success-transparent: rgba(22, 68, 0, 0.6);
+$fail: #9f1a1a;
+$fail-transparent: rgba(159, 26, 26, 0.5);
+$light-grey: #ececec;
+$grey: #cccad0;
+$grey-transparent: rgba(125, 125, 125, 0.5);
+$dark-grey: #969292;
+
+// Breakpoints for responsiveness
+$breakpoints: (
+  "sm": (
+    max: 330px,
+  ),
+  "lg": (
+    max: 2000px,
+  ),
+);
+
+/*--------------- General styling and responsiveness ---------------*/
+
+* {
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+article {
+  padding: 0.5rem;
+}
+
+hr {
+  border: 1px solid $grey;
+  margin: 2rem 0;
+}
+
+.container {
+  padding: 0 1rem;
+}
+
+.padding-2 {
+  padding: 2rem;
+}
+
+// Importing external resources
+@import "fonts";
+@import "responsive";
+@import "base";
+@import "elements/buttons";
+@import "elements/modal";
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+
+/*-------------------- Colors ----------------------*/
+
+// Loop through color variables to generate text and background color classes
 $colors: (
   "primary": $primary,
-  "sucess": $sucess,
+  "success": $success,
   "fail": $fail
 );
 
@@ -14,11 +76,12 @@ $colors: (
   }
 }
 
-/*------------------------Tekst--------------*/
+/*------------------------ Text styles ------------------------*/
+
 $font-family: "Oswald-VariableFont_wght.ttf", sans-serif;
 
-@mixin text-styles($font-type, $font-size, $font-weight, $alignment, $color) {
-  font-family: $font-type;
+@mixin text-styles($font-size, $font-weight, $alignment, $color) {
+  font-family: $font-family;
   font-size: $font-size;
   font-weight: $font-weight;
   text-align: $alignment;
@@ -27,59 +90,61 @@ $font-family: "Oswald-VariableFont_wght.ttf", sans-serif;
 }
 
 .title {
-  @include text-styles($font-family, 2rem, bold, center, $primary);
+  @include text-styles(2rem, bold, center, $primary);
   padding: 1.5rem 0;
 }
 
 .header {
-  @include text-styles($font-family, 1.5rem, 600, center, $primary);
+  @include text-styles(1.5rem, 600, center, $primary);
   padding: 2rem;
 }
+
 .header-small {
-  @include text-styles($font-family, 1rem, 500, center, $primary);
+  @include text-styles(1rem, 500, center, $primary);
   margin-bottom: 1rem;
 }
 
 .paragraph {
-  @include text-styles(sans-serif, 1rem, 400, center, black);
+  @include text-styles(1rem, 400, center, black);
   padding: 0.5rem;
 }
+
 .paragraph-left {
-  @include text-styles(sans-serif, 1rem, 300, left, black);
-  padding: 0 0.5rem 0 0.5rem;
+  @include text-styles(1rem, 300, left, black);
+  padding: 0 0.5rem;
 }
-.profile-information {
-  @include text-styles($font-family, 1rem, 300, left, black);
-}
+
+.profile-information,
 .profile-information-header {
-  @include text-styles($font-family, 1rem, 500, left, black);
+  @include text-styles(1rem, 300, left, black);
 }
 
 .profile-name {
-  @include text-styles($font-family, 1.5rem, 400, left, $primary);
+  @include text-styles(1.5rem, 400, left, $primary);
 }
 
-.list-no-style {
-  list-style-type: none;
-
-  li {
-    @include text-styles($font-family, 1rem, 300, left, black);
-  }
+.list-no-style li {
+  @include text-styles(1rem, 300, left, black);
 }
 
 .bi {
-  margin: 0 1rem 0 0;
+  margin-right: 1rem;
 }
 
-/* ----------- Forside ------*/
+/* --------------------- Front page --------------------- */
+
 .logo {
   margin: 2rem 0;
 }
-/* --------- Venneanmodning side ---------*/
+
+/* ----------------- Friend request page ----------------- */
+
 .post {
   padding: 2rem;
 }
-/*-------- Messenger side -------*/
+
+/* ----------------- Messenger page ----------------- */
+
 .messenger-header {
   background-color: $light-grey;
   padding: 0.5rem;
@@ -96,24 +161,24 @@ $font-family: "Oswald-VariableFont_wght.ttf", sans-serif;
   color: $primary;
   font-size: 3rem;
   &:hover {
-    color: $sucess;
+    color: $success;
     cursor: pointer;
   }
 }
 
 .bi-three-dots {
   font-size: 1.5rem;
-  text-align: center;
   color: $primary;
   float: right;
 }
+
 .messenger-picture {
   @include img-round(null, 20%, null);
   min-width: 15%;
 }
 
 .message {
-  @include text-styles(sans-serif, 1rem, 300, left, black);
+  @include text-styles(1rem, 300, left, black);
   padding: 1rem;
   background-color: $light-grey;
   border-radius: 10px;
@@ -123,11 +188,13 @@ $font-family: "Oswald-VariableFont_wght.ttf", sans-serif;
 .typing-message {
   margin-right: 2rem;
 }
+
 .messenger-name {
-  @include text-styles($font-family, 1rem, 300, left, $grey);
+  @include text-styles(1rem, 300, left, $grey);
 }
 
-/*--------Informations side --------*/
+/* ----------------- Information page ----------------- */
+
 .hidden {
   display: none;
   opacity: 0;
@@ -199,13 +266,13 @@ $font-family: "Oswald-VariableFont_wght.ttf", sans-serif;
 }
 
 .padding-1 {
-  padding: 1rem 0 1rem 0;
+  padding: 1rem 0;
 }
 
 .identity-scale label {
   display: inline-block;
   margin: 0.2rem;
-  @include text-styles($font-family, 1rem, 300, center, white);
+  @include text-styles(1rem, 300, center, white);
 }
 
 #slider {

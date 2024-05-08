@@ -1,4 +1,5 @@
-@mixin modal($background, $padding) {
+// Mixin til at definere modalens egenskaber
+@mixin modal($baggrund, $padding) {
   position: fixed;
   top: 50%;
   left: 50%;
@@ -8,13 +9,15 @@
   box-shadow: 0 4rem 6rem rgba(0, 0, 0, 0.3);
   z-index: 1000;
   transition: all 0.5s;
-  background-color: $background;
+  background-color: $baggrund;
 }
 
+// Stilregler for modalen og dens elementer
 .modal,
 .dialog-box {
   @include modal(white, 2rem 4rem);
 
+  // Justeringer for større skærme
   @media (min-width: 331px) {
     .header {
       margin: 1rem 0.5rem;
@@ -27,6 +30,7 @@
     }
   }
 
+  // Justeringer for mindre skærme
   @media (max-width: 330px) {
     .header {
       margin: 2rem 0.5rem 0rem 0.5rem;
@@ -37,22 +41,20 @@
   }
 }
 
-#pw {
+// Stilregler for specifikke elementer der er skjult som standard
+#pw,
+#test-completed,
+#blocked-reported {
   display: none;
-}
 
-#test-completed {
-  display: none;
-
+  // Stilregler for knapper inde i dialog-bokse
   .btn-primary,
   .btn-primary-light {
     width: 400px;
   }
 }
-#blocked-reported {
-  display: none;
-}
 
+// Stilregler for dialogens indhold
 .dialog-content {
   @include modal($light-grey, 1rem 0);
   border-radius: 20px;
@@ -60,15 +62,18 @@
   flex-direction: column;
   justify-content: center;
 
+  // Stilregler for overskrift i dialogen
   .header-small {
     font-weight: 500;
     font-size: 1.2rem;
     padding: 2rem;
   }
+  // Stilregler for afsnit i dialogen
   .paragraph {
     padding: 1rem 2rem;
   }
 
+  // Stilregler for input-felter
   .input-field {
     border: 1px solid $primary-transparent;
     margin: 1rem;
@@ -79,16 +84,19 @@
   }
 }
 
+// Klasse til at ændre tekstfarven til fail-farve
 .failure-txt {
   color: $fail !important;
 }
 
+// Stilregler for en mørk vandret streg
 .hr-dark {
   border: 2px solid $grey-transparent;
   width: 100%;
 }
 
-@mixin overlay($background) {
+// Mixin til at definere overlayens egenskaber
+@mixin overlay($baggrund) {
   position: fixed;
   top: 0;
   left: 0;
@@ -99,6 +107,7 @@
   transition: all 0.5s;
 }
 
+// Stilregler for overlayen og dens elementer
 .overlay,
 .dialog-overlay {
   @include overlay($grey-transparent);
@@ -116,6 +125,7 @@
   background-color: $fail-transparent; // Baggrundsfarve for fail-state
 }
 
+// Stilregler for lukkeknapper
 .btn-close-modal,
 .close-btn {
   font-family: inherit;
@@ -125,12 +135,14 @@
   border: none;
   background: none;
 
+  // Justeringer for større skærme
   @media (min-width: 331px) {
     position: inherit;
     top: 0.5rem;
     right: 2rem;
   }
 
+  // Justeringer for mindre skærme
   @media (max-width: 330px) {
     position: absolute;
     top: 0.5rem;
@@ -139,6 +151,7 @@
   }
 }
 
+// Justeringer for mindre skærme
 @media (max-width: 330px) {
   .dialog-content {
     padding: 6rem 1rem 2rem 1rem;
@@ -147,6 +160,7 @@
   #test-completed {
     max-width: 100%;
 
+    // Justering af knappes bredde
     .btn-primary,
     .btn-primary-light {
       max-width: 300px;
@@ -154,7 +168,9 @@
   }
 }
 
+// Justeringer for større skærme
 @media (min-width: 331px) {
+  // Justering af input-felters bredde
   .input-field {
     width: 270px;
     height: 30px;
