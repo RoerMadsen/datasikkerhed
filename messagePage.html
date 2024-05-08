@@ -1,25 +1,24 @@
 <!DOCTYPE html>
 <html lang="da">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
-    <link rel="shortcut icon" href="img/HFD-favicon.png" type="image/x-icon" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="img/HFD-favicon.png" type="image/x-icon">
     <script src="message.js" defer></script>
     <title>Du har modtaget en ny besked!</title>
   </head>
+
+
   <body class="mobile desktop">
+    <!--profiloplysninger og "tilbage" knap-->
     <header class="messenger-header flex-inline-row-between">
       <div class="flex-row">
-        <a href="testYourself.html"
-          ><figure><i class="bi bi-arrow-return-left"></i></figure
-        ></a>
-
+        <a href="testYourself.html" aria-label="tilbage til forrige side"><figure><i class="bi bi-arrow-return-left"></i></figure></a>
         <img
           src="img/josh-pereira-wqP4m9a83nM-unsplash.jpg"
           class="messenger-picture"
-          alt="Profilbillede: en smuk lyshåret kvinde i badetøj"
-        />
+          alt="Profilbillede: en smuk lyshåret kvinde i badetøj">
         <p class="paragraph">Katrine Jensen</p>
       </div>
       <!--opkald og video ikoner-->
@@ -28,8 +27,10 @@
         <figure><i class="bi bi-camera-video-fill"></i></figure>
       </div>
     </header>
+
+
     <main>
-      <!--Dialogboks der indlæses når siden åbnes-->
+      <!--Modal med instruktioner, der indlæses når siden åbnes-->
       <div id="info-dialog" class="dialog-overlay">
         <div class="dialog-box flex-col-center">
           <h1 class="title">Del 2</h1>
@@ -42,20 +43,20 @@
             linket, eller at anmelde og blokere brugeren ved at trykke på den
             grønne advarsels-trekant i bunden af siden.
           </p>
-          <button id="close-info-dialogue" class="btn-primary">
+          <button id="close-info-dialogue" class="btn-primary" aria-label="Luk dialogboks">
             Tak, det er forstået!
           </button>
         </div>
       </div>
 
-      <!--Messenger beskeder + bloker og anmeld knap. Beskeder vises med forsinkelse - se message-js.-->
+      <!--Messenger beskeder + bloker og anmeld knap. Beskeder vises med forsinkelse. Se message-js.-->
       <article class="grid-messenger">
         <div class="col-span-2 row-span-1 start-col-1">
           <h2 class="messenger-name">Katrine Jensen</h2>
         </div>
         <div class="messages col-span-2 start-col-1">
-          <button class="messenger-link-btn message" id="link-message">
-            http//:www.synligtFalskLink.org
+          <button class="messenger-link-btn message" id="link-message" aria-label="falsk link, åbner næste del af testen">
+            http://www.synligtFalskLink.org
           </button>
         </div>
 
@@ -66,7 +67,7 @@
               beskeden, eller du kan trykke på linket og se hvad der kan ske.
             </p>
           </div>
-          <button id="block-report-btn">
+          <button id="block-report-btn" aria-label="knap til at blokere og rapportere profilen">
             <i class="bi bi-exclamation-triangle-fill"></i>
           </button>
         </div>
@@ -75,7 +76,7 @@
       <!--Dialogboks der åbnes når man trykker på det falske link-->
       <div id="pw" class="dialog-overlay">
         <!--Første "side" i dialogboksen-->
-        <div id="change-password" class="dialog-content">
+        <div id="change-password" class="dialog-content" aria-label="lukker dialogboksen">
           <button class="close-pw-modal close-btn">&times;</button>
           <p class="header-small">
             Dit password er dukket op i et datalæk, hvilket giver risiko for at
@@ -83,10 +84,10 @@
             det samme.
           </p>
           <div class="flex-col-center">
-            <button id="change-pw-btn" class="btn-primary">
+            <button id="change-pw-btn" class="btn-primary" aria-label="skift password">
               Skift password nu
             </button>
-            <button id="decline-pw-btn" class="btn-primary-light">
+            <button id="decline-pw-btn" class="btn-primary-light" aria-label="lad være med at skifte password">
               Ikke nu
             </button>
           </div>
@@ -94,7 +95,7 @@
 
         <!-- indholdet der vises i dialogboksen hvis man vælger "skift password nu"-->
         <div id="new-pw" class="dialog-content">
-          <button class="close-new-pw-modal close-btn">&times;</button>
+          <button class="close-new-pw-modal close-btn" aria-label="luk dialogboks">&times;</button>
           <p class="header">Opret et stærkt password.</p>
           <p class="paragraph">
             Et stærkt password er svært at gætte eller hacke. Vi anbefaler at
@@ -109,18 +110,17 @@
             <input
               type="password"
               class="pw-input input-field"
-              placeholder="Skriv et password her..."
-            />
-            <button class="show-password">
+              placeholder="Skriv et password her...">
+            <button class="show-password" aria-label="vis password">
               <i class="bi bi-eye eye-icon"></i>
             </button>
           </div>
           <p class="pw-message header-small">Prøv dig frem!</p>
           <div class="flex-col-center">
-            <button type="submit" class="pw-submit btn-primary">
+            <button type="submit" class="pw-submit btn-primary" aria-label="test styrke af password">
               Tjek styrke
             </button>
-            <button class="save-quit btn-primary-light">
+            <button class="save-quit btn-primary-light" aria-label="afslut testen">
               Gem og afslut test
             </button>
           </div>
@@ -140,12 +140,8 @@
             hurtigt for at sikre dine konti og minimere potentielle skader
           </p>
           <div class="flex-col-center padding-2">
-            <a class="btn-primary" href="testYourself.html"
-              >Vil du prøve igen?</a
-            >
-            <a class="btn-primary-light" href="infoPage.html"
-              >Læs om datasikkerhed</a
-            >
+            <a class="btn-primary" href="testYourself.html" aria-label="genstart testen">Vil du prøve igen?</a>
+            <a class="btn-primary-light" href="infoPage.html" aria-label="gå til informationsside">Læs om datasikkerhed</a>
           </div>
         </div>
       </div>
@@ -153,15 +149,11 @@
       <!--Indholdet der vises når man trykker "gem og afslut"-->
       <div id="test-completed" class="dialog-overlay">
         <div class="modal">
-          <button class="close-test-completed-modal close-btn">&times;</button>
+          <button class="close-test-completed-modal close-btn" aria-label="luk dialogboks">&times;</button>
           <p class="header">Du har gennemført testen!</p>
           <div class="flex-col-center">
-            <a class="btn-primary" href="testYourself.html"
-              >Vil du prøve igen?</a
-            >
-            <a class="btn-primary-light" href="infoPage.html"
-              >Læs om datasikkerhed</a
-            >
+            <a class="btn-primary" href="testYourself.html" aria-label="genstart testen">Vil du prøve igen?</a>
+            <a class="btn-primary-light" href="infoPage.html" aria-label="gå til informationsside">Læs om datasikkerhed</a>
           </div>
         </div>
       </div>
@@ -169,7 +161,7 @@
       <!--Dialogboks der åbnes hvis man vælger at anmelde og blokere-->
       <div id="blocked-reported" class="dialog-overlay">
         <div class="modal">
-          <button class="close-blocked-reported-modal close-btn">
+          <button class="close-blocked-reported-modal close-btn" aria-label="luk dialogboks">
             &times;
           </button>
           <p class="header">Flot! Du har Blokeret og anmeldt profilen.</p>
@@ -190,12 +182,8 @@
             alle brugere.
           </p>
           <div class="flex-col-center">
-            <a class="btn-primary" href="testYourself.html"
-              >Vil du prøve igen?</a
-            >
-            <a class="btn-primary-light" href="infoPage.html"
-              >Læs om datasikkerhed</a
-            >
+            <a class="btn-primary" href="testYourself.html" aria-label="genstart testen">Vil du prøve igen?</a>
+            <a class="btn-primary-light" href="infoPage.html" aria-label="gå til informationsside">Læs om datasikkerhed</a>
           </div>
         </div>
       </div>

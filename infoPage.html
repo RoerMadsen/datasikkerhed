@@ -1,19 +1,25 @@
 <!DOCTYPE html>
 <html lang="da">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
-    <link rel="shortcut icon" href="img/HFD-favicon.png" type="image/x-icon" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="img/HFD-favicon.png" type="image/x-icon">
     <script src="infoPage.js" defer></script>
     <title>Læs om Datasikkerhed</title>
   </head>
+
+
   <body class="mobile desktop">
+
+    <!--semi-transparent bar med link til forsiden-->
     <header class="return-header">
-      <a href="index.html" class="paragraph">Tilbage til forsiden</a>
+      <a href="index.html" class="paragraph" aria-label="gå tilbage til forsiden">Tilbage til forsiden</a>
     </header>
-    <main class="container">
-      <div class="info-header">
+
+    <main>
+      <!--introduktion til sidens indhold-->
+      <div class="info-header container">
         <h1 class="title padding-1">Sikkerhed på internettet</h1>
         <h2 class="header padding-1">
           Der er mange former for svindel på internettet og det kan have store
@@ -27,14 +33,13 @@
           konsekvenserne heraf for at være bedre rustet mod truslerne.
         </p>
       </div>
-
+      <!--Tekstblokke med information om datasikkerhed og færdsel på nettet-->
       <div class="info-text-block">
         <div class="text-block-title mobile-row-sb">
           <h3 class="header-small">Passwordbeskyttelse</h3>
           <button
             class="desktop-hidden info-fold-button"
-            id="btn-passwordbeskyttelse"
-          >
+            id="btn-passwordbeskyttelse" aria-label="vis indhold">
             <span class="hidden">Læs mere</span>
           </button>
         </div>
@@ -50,13 +55,13 @@
             form for bekræftelse ud over dit password.
           </p>
         </div>
-        <hr />
+        <hr>
       </div>
 
       <div class="info-text-block">
         <div class="text-block-title mobile-row-sb">
           <h3 class="header-small">Scam og Phishing</h3>
-          <button class="desktop-hidden info-fold-button" id="btn-scamPhishing">
+          <button class="desktop-hidden info-fold-button" id="btn-scamPhishing" aria-label="vis indhold">
             <span class="hidden">Læs mere</span>
           </button>
         </div>
@@ -72,7 +77,7 @@
             oplysninger.
           </p>
         </div>
-        <hr />
+        <hr>
       </div>
 
       <!--- Mini quiz "gæt hvor mange procent..." -->
@@ -86,19 +91,18 @@
           <input
             type="text"
             class="input-field percentage-quiz-input"
-            placeholder="Skriv dit bud her..."
-          />
-          <button type="submit" class="btn-guess percentage-guess">Gæt</button>
+            placeholder="Skriv dit bud her...">
+          <button type="submit" class="btn-guess percentage-guess" aria-label="tryk her for at tjekek dit gæt">Gæt</button>
         </div>
       </div>
 
+      <!--Tekstblokke med information om datasikkerhed og færdsel på nettet-->
       <div class="info-text-block">
         <div class="text-block-title mobile-row-sb">
           <h3 class="header-small">Identitessvindel</h3>
           <button
             class="desktop-hidden info-fold-button"
-            id="btn-identitetssvindel"
-          >
+            id="btn-identitetssvindel" aria-label="vis indhold">
             <span class="hidden">Læs mere</span>
           </button>
         </div>
@@ -114,7 +118,7 @@
             det svært at opnå lån eller finansiere i fremtiden.
           </p>
         </div>
-        <hr />
+        <hr>
       </div>
 
       <div class="info-text-block">
@@ -122,8 +126,7 @@
           <h3 class="header-small">Kompromiterede Konti</h3>
           <button
             class="desktop-hidden info-fold-button"
-            id="btn-kompromiteredeKonti"
-          >
+            id="btn-kompromiteredeKonti" aria-label="vis indhold">
             <span class="hidden">Læs mere</span>
           </button>
         </div>
@@ -138,7 +141,7 @@
             angrebene.
           </p>
         </div>
-        <hr />
+        <hr>
       </div>
 
       <!--- Mini quiz "identitesvindel..." -->
@@ -162,21 +165,20 @@
               max="20"
               step="5"
               value="5"
-              id="slider"
-            />
+              id="slider">
           </div>
 
-          <button type="submit" class="btn-guess identity-guess">Gæt</button>
+          <button type="submit" class="btn-guess identity-guess" aria-label="tryk her for at tjekke dit gæt">Gæt</button>
         </div>
       </div>
 
+    <!--Tekstblokke med information om datasikkerhed og færdsel på nettet-->
       <div class="info-text-block">
         <div class="text-block-title mobile-row-sb">
           <h3 class="header-small">Finansiel Svindel</h3>
           <button
             class="desktop-hidden info-fold-button"
-            id="btn-finansielSvindel"
-          >
+            id="btn-finansielSvindel" aria-label="vis indhold">
             <span class="hidden">Læs mere</span>
           </button>
         </div>
@@ -192,7 +194,7 @@
             bevise, at du var offer for svindel.
           </p>
         </div>
-        <hr />
+        <hr>
       </div>
 
       <div class="info-text-block">
@@ -200,8 +202,7 @@
           <h3 class="header-small">Reputationsskade</h3>
           <button
             class="desktop-hidden info-fold-button"
-            id="btn-reputationsskade"
-          >
+            id="btn-reputationsskade" aria-label="vis indhold">
             <span class="hidden">Læs mere</span>
           </button>
         </div>
@@ -216,7 +217,7 @@
             karriere og fremtidige muligheder, hvis det bliver kendt offentligt.
           </p>
         </div>
-        <hr />
+        <hr>
       </div>
 
       <div class="info-text-block">
@@ -224,8 +225,7 @@
           <h3 class="header-small">Juridiske Problemer</h3>
           <button
             class="desktop-hidden info-fold-button"
-            id="btn-juridiskeProblemer"
-          >
+            id="btn-juridiskeProblemer" aria-label="vis indhold">
             <span class="hidden">Læs mere</span>
           </button>
         </div>
@@ -240,7 +240,7 @@
             konsekvenser for din personlige og professionelle liv.
           </p>
         </div>
-        <hr />
+        <hr>
       </div>
     </main>
   </body>

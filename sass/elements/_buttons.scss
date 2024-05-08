@@ -1,21 +1,24 @@
-@mixin button-style($width, $height, $font-size, $background, $margin) {
-  width: $width;
-  height: $height;
+// Mixin til at definere knappens stil
+@mixin button-style($bredde, $hoejde, $skrift-stoerrelse, $baggrund, $margin) {
+  width: $bredde;
+  height: $hojde;
   margin: $margin;
-  background-color: $background;
-  @include text-styles($font-family, $font-size, 300, center, white);
+  background-color: $baggrund;
+  @include text-styles($font-family, $skrift-stoerrelse, 300, center, white);
   border-radius: 10px;
   text-decoration: none;
-  line-height: $height;
+  line-height: $hojde;
 }
 
-@mixin button-hover($bg-color, $border-color, $txt-color) {
-  background-color: $bg-color;
-  border: 5px solid $border-color;
-  color: $txt-color;
+// Mixin til at definere knappens hover-effekt
+@mixin button-hover($baggrundsfarve, $kantfarve, $tekstfarve) {
+  background-color: $baggrundsfarve;
+  border: 5px solid $kantfarve;
+  color: $tekstfarve;
   cursor: pointer;
 }
 
+// Klasse til primære knapper
 .btn-primary {
   display: block;
   border: 5px solid white;
@@ -25,6 +28,7 @@
   }
 }
 
+// Klasse til lyse primære knapper
 .btn-primary-light {
   display: block;
   border: 5px solid white;
@@ -34,10 +38,12 @@
   }
 }
 
+// Mixin til at definere knapstil
 @mixin button-btn {
   padding: 0.5rem;
 }
 
+// Klasse til accept-knappen
 .btn-accept {
   border: 5px solid $primary;
   margin-right: 10px;
@@ -48,6 +54,7 @@
   }
 }
 
+// Klasse til afvis-knappen
 .btn-decline {
   border: 5px solid $grey;
   @include button-style(150px, 100%, 1.2rem, $grey, null);
@@ -58,6 +65,7 @@
   }
 }
 
+// Klasse til gæt-knappen
 .btn-guess {
   @include button-style(auto, auto, 1rem, $primary, 0.5rem);
   padding: 0.5rem 1rem 0.5rem 1rem;
@@ -68,6 +76,7 @@
   }
 }
 
+// Klasse til messenger-link knapper
 .messenger-link-btn {
   text-decoration: underline;
   color: $primary;
@@ -79,11 +88,13 @@
   }
 }
 
+// Id til blokere/rapporter knap
 #block-report-btn {
   border: none;
   background-color: white;
 }
 
+// Klasse til adgangskodebesked knap
 .pw-message-btn {
   border: none;
   width: 100%;
@@ -98,6 +109,7 @@
   }
 }
 
+// Klasse til at vise adgangskode
 .show-password {
   border: none;
   font-size: 2rem;
